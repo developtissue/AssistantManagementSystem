@@ -31,14 +31,14 @@ public class HomeController {
 	public String displayGradeTable(Model model,String clsid,String sid) {
 		
 		if(clsid == null || clsid == "") {
-			model.addAttribute("s_grades_list", ms1.getMyEntity1List2(0));
+			//model.addAttribute("s_grades_list", ms1.getMyEntity1List2(0));
 		}else {
 			int cls_id = Integer.parseInt(clsid);
 			model.addAttribute("s_grades_list", ms1.getMyEntity1List2(cls_id));
 		}
 		
 		if(sid == null || sid == "") {
-			model.addAttribute("s_grades3_list", ms1.getMyEntity1List3(0));
+			//model.addAttribute("s_grades3_list", ms1.getMyEntity1List3(0));
 		}else {
 			int s_id = Integer.parseInt(sid);
 			model.addAttribute("s_grades3_list", ms1.getMyEntity1List3(s_id));
