@@ -10,16 +10,16 @@
     <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
-    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/reference/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/reference/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/reference/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-   <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+   <link href="/reference/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="/build/css/custom.min.css" rel="stylesheet">
+    <link href="/reference/build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -36,7 +36,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="/reference/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -52,12 +52,14 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> 学生界面 <span	class="fa fa-chevron-down"></span></a>
-					<ul class="nav child_menu">
-						<li><a href="QueryGrade">查询成绩</a></li>
-						<li><a href="ViewInformation">查看招聘状态</a></li>
-						<li><a href="ViewComment">结果评价</a></li>
-					</ul></li>
+                  <li><a><i class="fa fa-home"></i> 学生界面 <span
+										class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="ViewRecruitment">查看招聘表</a></li>
+										<li><a href="QueryGrade">查询成绩</a></li>
+										<li><a href="ViewInformation">查询招聘状态</a></li>
+										<li><a href="ViewComment">查询结果评价</a></li>
+									</ul></li>
 
                 </ul>
               </div>
@@ -155,7 +157,6 @@
                             </th>
                             <th class="column-title">学号 </th>
 							<th class="column-title">姓名 </th>
-                            <th class="column-title">考核日期</th>
                             <th class="column-title">所属院系</th>
 							
                             <th class="column-title">考核成绩</th>
@@ -172,114 +173,10 @@
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
                             <td class=" ">16202101</td>
-							<td class=" ">小红</td>
-                            <td class=" ">May 30, 2019 11:47:56 PM </td>
+							<td class=" ">小明</td>
                             <td class=" ">软件学院 </td>
                            
                             <td class=" ">80</td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202102</td>
-							<td class=" ">小橙</td>
-                            <td class=" ">May 23, 2019 11:30:12 PM</td>
-                            <td class=" ">软件学院
-                            </td>
-                            
-                            <td class=" ">81</td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202103</td>
-							<td class=" ">小黄</td>
-                            <td class=" ">May 24, 2019 10:55:33 PM</td>
-                            <td class=" ">软件学院
-                            </td>
-                         
-                            <td class=" ">82</td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202104</td>
-							<td class=" ">小绿</td>
-                            <td class=" ">May 24, 2019 10:52:44 PM</td>
-                            <td class=" ">软件学院</td>
-                          
-                            <td class=" ">83</td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202105</td>
-							<td class=" ">小青</td>
-                            <td class=" ">May 24, 2019 11:47:56 PM </td>
-                            <td class=" ">软件学院</td>
-                           
-                            <td class=" ">84</td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202106</td>
-							<td class=" ">小兰</td>
-                            <td class=" ">May 26, 2019 11:30:12 PM</td>
-                            <td class=" ">软件学院
-                            </td>
-                          
-                            <td class=" ">85</td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202107</td>
-							<td class=" ">小紫</td>
-                            <td class=" ">May 26, 2019 10:55:33 PM</td>
-                            <td class=" ">软件学院</td>
-                            
-                            <td class=" ">86</td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202108</td>
-							<td class=" ">小明</td>
-                            <td class=" ">May 26, 2019 10:52:44 PM</td>
-                            <td class=" ">软件学院</td>
-                          
-                            <td class=" ">87</td>
-                          </tr>
-
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202109</td>
-							<td class=" ">小李</td>
-                            <td class=" ">May 27, 2019 11:47:56 PM </td>
-                            <td class=" ">软件学院</td>
-                           
-                            <td class=" ">88</td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202110</td>
-							<td class=" ">小王</td>
-                            <td class=" ">May 28, 2019 11:30:12 PM</td>
-                            <td class=" ">软件学院</td>
-                           
-                            <td class=" ">89</td>
                           </tr>
                         </tbody>
                       </table>
@@ -306,17 +203,17 @@
     
 
     <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/reference/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/reference/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="/reference/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="/vendors/nprogress/nprogress.js"></script>
+    <script src="/reference/vendors/nprogress/nprogress.js"></script>
     <!-- iCheck -->
-    <script src="/vendors/iCheck/icheck.min.js"></script>
+    <script src="/reference/vendors/iCheck/icheck.min.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="/build/js/custom.min.js"></script>
+    <script src="/reference/build/js/custom.min.js"></script>
   </body>
 </html>
