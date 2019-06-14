@@ -31,6 +31,9 @@ public class HomeController {
 	public String displayGradeTable(Model model,String clsid,String sid) {
 		
 		if(clsid == null || clsid == "") {
+			/*
+			 * 暂时注释掉该语句调用数据库的代码
+			*/			
 			//model.addAttribute("s_grades_list", ms1.getMyEntity1List2(0));
 		}else {
 			int cls_id = Integer.parseInt(clsid);
