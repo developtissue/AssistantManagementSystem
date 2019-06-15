@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Meta, title, CSS, favicons, etc. -->
@@ -176,257 +176,64 @@
 							</div>
 						</div>
 					</div>
+					<!-- 展示对应助教需要批改的班级 -->
 
 					<div class="clearfix"></div>
+					<th:block th:each="a : ${experiments}">
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="x_panel">
+									<div class="x_title">
+										<h2>
+											<small th:text="${a.e_name}"></small>
+										</h2>
+										<ul class="nav navbar-right panel_toolbox">
+											<li><a class="collapse-link"><i
+													class="fa fa-chevron-up"></i></a></li>
+											<li class="dropdown"><a href="#" class="dropdown-toggle"
+												data-toggle="dropdown" role="button" aria-expanded="false"><i
+													class="fa fa-wrench"></i></a>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="#t">Settings 1</a></li>
+													<li><a href="#">Settings 2</a></li>
+												</ul></li>
+											<li><a class="close-link"><i class="fa fa-close"></i></a>
+											</li>
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+									<div class="x_content">
 
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="x_panel">
-								<div class="x_title">
-									<h2>
-										1620 <small>Web高级编程作业</small>
-									</h2>
-									<ul class="nav navbar-right panel_toolbox">
-										<li><a class="collapse-link"><i
-												class="fa fa-chevron-up"></i></a></li>
-										<li class="dropdown"><a href="#" class="dropdown-toggle"
-											data-toggle="dropdown" role="button" aria-expanded="false"><i
-												class="fa fa-wrench"></i></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a href="#t">Settings 1</a></li>
-												<li><a href="#">Settings 2</a></li>
-											</ul></li>
-										<li><a class="close-link"><i class="fa fa-close"></i></a>
-										</li>
-									</ul>
-									<div class="clearfix"></div>
-								</div>
-								<div class="x_content">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>学号</th>
+													<th>姓名</th>
+													<th>班级</th>
+													<th>完成情况</th>
+												</tr>
+											</thead>
 
-									<table class="table">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Finish</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-										</tbody>
-									</table>
+											<tbody>
+												<th:block th:each="b : ${experiments.students}">
+													<tr>
+														<th scope="row">1</th>
+														<td th:text="${b.s_id}"></td>
+														<td th:text="${b.s_name}"></td>
+														<td th:text="${b.cls_id}"></td>
+														<td>完成</td>
+														<td><a href="/CheckExperimentOrWork">Check</a></td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
 
+									</div>
 								</div>
 							</div>
 						</div>
+					</c:forEach>
 
-
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="x_panel">
-								<div class="x_title">
-									<h2>
-										1620 <small>Web高级编程实验</small>
-									</h2>
-									<ul class="nav navbar-right panel_toolbox">
-										<li><a class="collapse-link"><i
-												class="fa fa-chevron-up"></i></a></li>
-										<li class="dropdown"><a href="#" class="dropdown-toggle"
-											data-toggle="dropdown" role="button" aria-expanded="false"><i
-												class="fa fa-wrench"></i></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a href="#">Settings 1</a></li>
-												<li><a href="#">Settings 2</a></li>
-											</ul></li>
-										<li><a class="close-link"><i class="fa fa-close"></i></a>
-										</li>
-									</ul>
-									<div class="clearfix"></div>
-								</div>
-								<div class="x_content">
-
-									<table class="table table-striped">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Finish</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-										</tbody>
-									</table>
-
-								</div>
-							</div>
-						</div>
-
-						<div class="clearfix"></div>
-
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="x_panel">
-								<div class="x_title">
-									<h2>
-										1620 <small>Java Net 实验</small>
-									</h2>
-									<ul class="nav navbar-right panel_toolbox">
-										<li><a class="collapse-link"><i
-												class="fa fa-chevron-up"></i></a></li>
-										<li class="dropdown"><a href="#" class="dropdown-toggle"
-											data-toggle="dropdown" role="button" aria-expanded="false"><i
-												class="fa fa-wrench"></i></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a href="#">Settings 1</a></li>
-												<li><a href="#">Settings 2</a></li>
-											</ul></li>
-										<li><a class="close-link"><i class="fa fa-close"></i></a>
-										</li>
-									</ul>
-									<div class="clearfix"></div>
-								</div>
-								<div class="x_content">
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Finish</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-										</tbody>
-									</table>
-
-								</div>
-							</div>
-						</div>
-
-
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="x_panel">
-								<div class="x_title">
-									<h2>
-										1620 <small>Java Net 作业</small>
-									</h2>
-									<ul class="nav navbar-right panel_toolbox">
-										<li><a class="collapse-link"><i
-												class="fa fa-chevron-up"></i></a></li>
-										<li class="dropdown"><a href="#" class="dropdown-toggle"
-											data-toggle="dropdown" role="button" aria-expanded="false"><i
-												class="fa fa-wrench"></i></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a href="#">Settings 1</a></li>
-												<li><a href="#">Settings 2</a></li>
-											</ul></li>
-										<li><a class="close-link"><i class="fa fa-close"></i></a>
-										</li>
-									</ul>
-									<div class="clearfix"></div>
-								</div>
-								<div class="x_content">
-
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Finish</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>True</td>
-												<td><a href="/CheckExperimentOrWork">Check</a></td>
-											</tr>
-										</tbody>
-									</table>
-
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
