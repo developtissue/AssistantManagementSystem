@@ -24,7 +24,7 @@ public class TestController {
 //		map.put("name", "wjx");
 //		//map.put("garde", Arrays.asList(90,100,79));
 //		
-//		List<MyEntity1> result = ms1.getMyEntity1List(16202101);
+//		List<MyEntity1> result = ms1.getMyEntity1List(1620****);
 //		double[] grades = new double[result.size()];
 //		for(int i = 0; i < result.size() ; i++) {
 //			grades[i] = result.get(i).getAe_grade();

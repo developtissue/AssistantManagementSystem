@@ -24,16 +24,16 @@ public class AssitantManagementSystemApplicationTests {
 	@Autowired
 	MyService1 service;
 	
-	@Test
-	public void test() {
-		List<AttendExperiment> list = repo.findByStuId(16202101);
-		System.out.println(list);
-	}
-	
-	@Test
-	public void testService() {
-		List<MyEntity1> list = service.getMyEntity1List(16202101);
-		System.out.println(list);
-	}
+//	@Test
+//	public void test() {
+//		List<AttendExperiment> list = repo.findByStuId(/* 1620**** */);
+//		System.out.println(list);
+//	}
+//	
+//	@Test
+//	public void testService() {
+//		List<MyEntity1> list = service.getMyEntity1List(/* 1620**** */);
+//		System.out.println(list);
+//	}
 
 }
