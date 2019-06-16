@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.annotation.processing.Filer;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import nchu.class1620.entity.Assistant;
 import nchu.class1620.entity.Experiment;
 import nchu.class1620.entity.Report;
 import nchu.class1620.entity.Student;
@@ -39,10 +41,12 @@ public class ZhangController {
 	/*
 	 * I will use session to define this attribute
 	 */
-	private int assist_id = 1601;
+	private int assist_id;
 
 	@PostMapping("/AssistantInitial")
-	public String PostAssistantInitial(Model model) {
+	public String PostAssistantInitial(Model model, HttpSession session) {
+		Assistant assistant=(Assistant) session.getAttribute("assistant");
+		assist_id=assistant.getAssist_id();
 		/*
 		 * Upload Experimet
 		 */
@@ -67,8 +71,8 @@ public class ZhangController {
 	}
 
 	@GetMapping("/AssistantInitial")
-	public String GetAssistantInitial(Model model) {
-		return PostAssistantInitial(model);
+	public String GetAssistantInitial(Model model, HttpSession session) {
+		return PostAssistantInitial(model,session);
 	}
 
 	@GetMapping("/CheckExperiment")
@@ -158,26 +162,26 @@ public class ZhangController {
 
 	@PostMapping("/SubmitExperimentScore")
 	public String SubmitExperimentScore(String mer_grade, String comment, String s_id, String et_id, String assist_id,
-			Model model) {
+			Model model, HttpSession session) {
 //		System.out.println(mer_grade + " " + comment + " " + s_id + " " + et_id + " " + assist_id);
 		int ints_id = Integer.valueOf(s_id);
 		int intet_id = Integer.valueOf(et_id);
 		int intassist_id = Integer.valueOf(assist_id);
 		double score = Double.valueOf(mer_grade);
 		experimentRepo.UpdateTask(intassist_id, intet_id, ints_id, score, comment);
-		return PostAssistantInitial(model);
+		return PostAssistantInitial(model,session);
 	}
 
 	@PostMapping("/SubmitTaskScore")
 	public String SubmitTaskScore(String mer_grade, String comment, String s_id, String et_id, String assist_id,
-			Model model) {
+			Model model, HttpSession session) {
 //		System.out.println(mer_grade + " " + comment + " " + s_id + " " + et_id + " " + assist_id);
 		int ints_id = Integer.valueOf(s_id);
 		int intet_id = Integer.valueOf(et_id);
 		int intassist_id = Integer.valueOf(assist_id);
 		double score = Double.valueOf(mer_grade);
 		taskRepo.UpdateTask(intassist_id, intet_id, ints_id, score, comment);
-		return PostAssistantInitial(model);
+		return PostAssistantInitial(model,session);
 	}
 
 	@PostMapping("/RequestReport")
