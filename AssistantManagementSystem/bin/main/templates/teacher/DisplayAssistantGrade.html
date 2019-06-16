@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -158,11 +158,7 @@
                             </th>
                             <th class="column-title">学号 </th>
 							<th class="column-title">姓名 </th>
-                            <th class="column-title">考核日期</th>
-                            <th class="column-title">所属院系</th>
-							
                             <th class="column-title">考核成绩</th>
-							<th class="column-title">操作</th>
 							<th class="column-title">操作</th>
                            
                             <th class="bulk-actions" colspan="7">
@@ -170,141 +166,15 @@
                             </th>
                           </tr>
                         </thead>
-
                         <tbody>
-                          <tr class="even pointer">
+                          <tr class="even pointer" th:each="a : ${oa}">
                             <td class="a-center ">
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
-                            <td class=" ">16202101</td>
-							<td class=" ">小红</td>
-                            <td class=" ">May 30, 2019 11:47:56 PM </td>
-                            <td class=" ">软件学院 </td>
-                           
-                            <td class=" ">80</td>
-							<td class=" "><a href ="WriteComment">评价</a></td>
-							<td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202102</td>
-							<td class=" ">小橙</td>
-                            <td class=" ">May 23, 2019 11:30:12 PM</td>
-                            <td class=" ">软件学院
-                            </td>
-                            
-                            <td class=" ">81</td>
-                           <td class=" "><a href ="WriteComment">评价</a></td>
-						   <td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202103</td>
-							<td class=" ">小黄</td>
-                            <td class=" ">May 24, 2019 10:55:33 PM</td>
-                            <td class=" ">软件学院
-                            </td>
-                         
-                            <td class=" ">82</td>
-                           <td class=" "><a href ="WriteComment">评价</a></td>
-						   <td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202104</td>
-							<td class=" ">小绿</td>
-                            <td class=" ">May 24, 2019 10:52:44 PM</td>
-                            <td class=" ">软件学院</td>
-                          
-                            <td class=" ">83</td>
-                          <td class=" "><a href ="WriteComment">评价</a></td>
-						  <td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202105</td>
-							<td class=" ">小青</td>
-                            <td class=" ">May 24, 2019 11:47:56 PM </td>
-                            <td class=" ">软件学院</td>
-                           
-                            <td class=" ">84</td>
-                           <td class=" "><a href ="WriteComment">评价</a></td>
-						   <td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202106</td>
-							<td class=" ">小兰</td>
-                            <td class=" ">May 26, 2019 11:30:12 PM</td>
-                            <td class=" ">软件学院
-                            </td>
-                          
-                            <td class=" ">85</td>
-                            <td class=" "><a href ="WriteComment">评价</a></td>
-							<td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202107</td>
-							<td class=" ">小紫</td>
-                            <td class=" ">May 26, 2019 10:55:33 PM</td>
-                            <td class=" ">软件学院</td>
-                            
-                            <td class=" ">86</td>
-                          <td class=" "><a href ="WriteComment">评价</a></td>
-						  <td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202108</td>
-							<td class=" ">小明</td>
-                            <td class=" ">May 26, 2019 10:52:44 PM</td>
-                            <td class=" ">软件学院</td>
-                          
-                            <td class=" ">87</td>
-                            <td class=" "><a href ="WriteComment">评价</a></td>
-							<td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202109</td>
-							<td class=" ">小李</td>
-                            <td class=" ">May 27, 2019 11:47:56 PM </td>
-                            <td class=" ">软件学院</td>
-                           
-                            <td class=" ">88</td>
-                           <td class=" "><a href ="WriteComment">评价</a></td>
-						   <td class=" "><a href ="#">查看汇报情况</a></td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">16202110</td>
-							<td class=" ">小王</td>
-                            <td class=" ">May 28, 2019 11:30:12 PM</td>
-                            <td class=" ">软件学院</td>
-                           
-                            <td class=" ">89</td>
-							<td class=" "><a href ="WriteComment">评价</a></td>
-							<td class=" "><a href ="#">查看汇报情况</a></td>
+								<td th:text="${a.assist_id}"></td>
+								<td th:text="${a.assist_name}"></td>
+								<td th:text="${a.assist_grade}"></td>
+								<td class=" "><a href ="#">查看汇报情况</a></td>
                           </tr>
                         </tbody>
                       </table>
