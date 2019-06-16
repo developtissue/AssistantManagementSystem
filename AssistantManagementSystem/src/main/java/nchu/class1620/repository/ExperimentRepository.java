@@ -33,12 +33,12 @@ public interface ExperimentRepository {
 	@Select("SELECT e_name from assistadmin.experiment where e_id=#{eid}")
 	public String findByExperimentName(int e_id);
 
-	@Select("select s.s_id,s.s_name,e_contnt,me.mer_grade,me.comment\r\n"
-			+ "from assistadmin.student s,assistadmin.markexperimentreport me,assistadmin.experiment e\r\n"
-			+ "where s.s_id=me.s_id and me.e_id=e.e_id and  s.cls_id=#{class_id}")
-	@Results({ @Result(column = "s.s_id", property = "s_id"), @Result(column = "s.s_name", property = "s.s_name"),
-			@Result(column = "e_contnt", property = "title"), @Result(column = "me.mer_grade", property = "socre"),
-			@Result(column = "me.comment", property = "comment") })
+	@Select("select s.s_id,s.s_name,e.e_content,me.mer_grade,me.comment\r\n" + 
+			"from assistadmin.student s,assistadmin.markexperimentreport me,assistadmin.experiment e \r\n" + 
+			"where s.s_id=me.s_id and me.e_id=e.e_id and  s.cls_id=#{class_id}")
+	@Results({ @Result(column = "s_id", property = "s_id"), @Result(column = "s_name", property = "s_name"),
+			@Result(column = "e_content", property = "title"), @Result(column = "mer_grade", property = "score"),
+			@Result(column = "comment", property = "comment") })
 	public ArrayList<Report> findExperiemntRportByClass(int class_id);
 
 	@Update("update assistadmin.markexperimentreport\r\n" + "set mer_grade=#{mer_grade},comment=#{comment}\r\n"

@@ -176,20 +176,13 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>
-								张老师 <small>Web高级编程老师</small>
-							</h3>
 						</div>
 
 						<div class="title_right">
 							<div
 								class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
 								<div class="input-group">
-									<input type="text" class="form-control"
-										placeholder="Search for..."> <span
-										class="input-group-btn">
-										<button class="btn btn-default" type="button">Go!</button>
-									</span>
+								
 								</div>
 							</div>
 						</div>
@@ -201,6 +194,16 @@
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="x_panel">
 								<div class="x_title">
+									<form action="RequestReport" method="post">
+										<div class="input-group">
+											<select name="type">
+												<option value="Task">Task</option>
+												<option value="Experiment">Experiment</option>
+											</select> <input type="text" name="class_id" placeholder="班级号" /> <input
+												class="btn btn-default submit" type="submit" value="查询" />
+										</div>
+										<div class="clearfix"></div>
+									</form>
 									<h2>
 										作业完成情况汇报 <small>Users</small>
 									</h2>
