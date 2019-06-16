@@ -121,5 +121,16 @@ public class MasterController {
 		return "teacher/ModifyPostRecruitment";
 	}
 	
+	
+	@GetMapping("/Logout")
+	public String Logout(Model model , HttpSession session) {	//移除session中的对象
+		session.removeAttribute("teacher");
+		session.removeAttribute("assistant");
+		session.removeAttribute("admin");
+		session.removeAttribute("student");
+		return "login";
+	}
+	
+	
 }
 
