@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Meta, title, CSS, favicons, etc. -->
@@ -157,7 +157,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>${title}</h3>
+							<h3 th:text=${title}></h3>
 						</div>
 
 						<div class="title_right">
@@ -180,7 +180,7 @@
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>${title}</h2>
+									<h2 th:text=${title}></h2>
 									<ul class="nav navbar-right panel_toolbox">
 										<li><a class="collapse-link"><i
 												class="fa fa-chevron-up"></i></a></li>
@@ -196,27 +196,30 @@
 									</ul>
 									<div class="clearfix"></div>
 								</div>
-								<div class="x_content">${content}</div>
+								<p class="x_content" th:text=${content}></p>
 							</div>
 						</div>
 					</div>
+					<!-- /page content -->
+					<!-- 提交成绩的form表单 -->
+					<form action="#" th:action="@{/SubmitScore}" method="post">
+						<input type="hidden" name="s_id" />
+						<div>
+							<input type="text" class="form-control" name="score"
+								placeholder="分数" />
+						</div>
+						<div>
+							<input type="text" class="form-control" name="comment"
+								placeholder="评语" />
+						</div>
+						<div>
+							<input class="btn btn-default submit" type="submit" value="提交" />
+						</div>
+						<div class="clearfix"></div>
+					</form>
 				</div>
 			</div>
-			<!-- /page content -->
-			<!-- 打成绩的form表单 -->
-			<form action="#" th:action="@{/AssistantSubmit}" th:object="${user}"
-				method="post">
-				<div>
-					<input type="text" class="form-control" placeholder="分数" />
-				</div>
-				<div>
-					<input type="password" class="form-control" placeholder="评语" />
-				</div>
-				<div>
-					<input class="btn btn-default submit" type="submit" value="提交" />
-				</div>
-				<div class="clearfix"></div>
-			</form>
+
 			<!-- footer content -->
 			<footer>
 				<div class="pull-right">

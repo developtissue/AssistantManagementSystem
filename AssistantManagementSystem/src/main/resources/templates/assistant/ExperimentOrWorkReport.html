@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Meta, title, CSS, favicons, etc. -->
@@ -225,79 +225,26 @@
 										class="table table-striped table-bordered">
 										<thead>
 											<tr>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Content</th>
-												<th>Score</th>
-												<th>Comment</th>
+												<th>学号</th>
+												<th>姓名</th>
+												<th>实验标题</th>
+												<th>分数</th>
+												<th>评论</th>
 											</tr>
 										</thead>
 
 
 										<tbody>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
+											<th:block th:each="a : ${reports}">
+												<tr>
+													<td th:text="${a.s_id}"></td>
+													<td th:text="${a.s_name}"></td>
+													<td th:text="${a.title}"></td>
+													<td th:text="${a.score}"></td>
+													<td th:text="${a.comment}"></td>
+													<td></td>
+												</tr>
+											</th:block>
 										</tbody>
 									</table>
 								</div>

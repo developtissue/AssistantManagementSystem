@@ -176,7 +176,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- 展示对应助教需要批改的班级 -->
+					<!-- 展示对应助教需要批改的班级的实验 -->
 
 					<div class="clearfix"></div>
 					<th:block th:each="a : ${experiments}">
@@ -185,7 +185,8 @@
 								<div class="x_panel">
 									<div class="x_title">
 										<h2>
-											<small th:text="${a.e_name}"></small>
+											<small>实验标题:</small><small th:text="${a.e_name}"></small> <br>
+											<small>实验内容:</small><small th:text="${a.e_content}"></small>
 										</h2>
 										<ul class="nav navbar-right panel_toolbox">
 											<li><a class="collapse-link"><i
@@ -215,16 +216,16 @@
 											</thead>
 
 											<tbody>
-												<th:block th:each="b : ${experiments.students}">
+												<th:block th:each="b : ${a.students}">
 													<tr>
-														<th scope="row">1</th>
 														<td th:text="${b.s_id}"></td>
 														<td th:text="${b.s_name}"></td>
 														<td th:text="${b.cls_id}"></td>
 														<td>完成</td>
-														<td><a href="/CheckExperimentOrWork">Check</a></td>
+														<td><a
+															th:href="@{/CheckExperiment(e_id=${a.e_id}, s_id=${b.s_id})}">Check</a></td>
 													</tr>
-												</c:forEach>
+												</th:block>
 											</tbody>
 										</table>
 
@@ -232,7 +233,66 @@
 								</div>
 							</div>
 						</div>
-					</c:forEach>
+					</th:block>
+
+					<!-- 展示对应助教需要批改的班级的作业 -->
+					<div class="clearfix"></div>
+					<th:block th:each="c : ${tasks}">
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="x_panel">
+									<div class="x_title">
+										<h2>
+											<small>作业标题:</small> <small th:text="${c.t_name}"></small> <br>
+											<small>作业内容:</small> <small th:text="${c.t_content}"></small>
+										</h2>
+
+										<ul class="nav navbar-right panel_toolbox">
+											<li><a class="collapse-link"><i
+													class="fa fa-chevron-up"></i></a></li>
+											<li class="dropdown"><a href="#" class="dropdown-toggle"
+												data-toggle="dropdown" role="button" aria-expanded="false"><i
+													class="fa fa-wrench"></i></a>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="#t">Settings 1</a></li>
+													<li><a href="#">Settings 2</a></li>
+												</ul></li>
+											<li><a class="close-link"><i class="fa fa-close"></i></a>
+											</li>
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+									<div class="x_content">
+
+										<table class="table">
+											<thead>
+												<tr>
+													<th>学号</th>
+													<th>姓名</th>
+													<th>班级</th>
+													<th>完成情况</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<th:block th:each="d : ${c.students}">
+													<tr>
+														<td th:text="${d.s_id}"></td>
+														<td th:text="${d.s_name}"></td>
+														<td th:text="${d.cls_id}"></td>
+														<td>完成</td>
+														<td><a
+															th:href="@{/CheckTask(t_id=${c.t_id}, s_id=${d.s_id})}">Check</a></td>
+													</tr>
+												</th:block>
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</th:block>
 
 				</div>
 			</div>
