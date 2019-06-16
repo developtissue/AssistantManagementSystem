@@ -12,7 +12,7 @@ import nchu.class1620.repository.AssistantRepository;
 
 @Controller
 public class HanController {
-<<<<<<< HEAD
+
 	@Autowired
 	private AssistantRepository AssistantRepo;
 	
@@ -27,9 +27,6 @@ public class HanController {
 		return "assistant/WorkReport";
 	}
 	
-=======
-
->>>>>>> master
 	@GetMapping("/QueryGrade")
 	public String QuaryGrade(Model model) {
 		return "student/QueryGrade";
