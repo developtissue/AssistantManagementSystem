@@ -45,8 +45,8 @@ public class ZhangController {
 
 	@PostMapping("/AssistantInitial")
 	public String PostAssistantInitial(Model model, HttpSession session) {
-		Assistant assistant=(Assistant) session.getAttribute("assistant");
-		assist_id=assistant.getAssist_id();
+		Assistant assistant = (Assistant) session.getAttribute("assistant");
+		assist_id = assistant.getAssist_id();
 		/*
 		 * Upload Experimet
 		 */
@@ -72,7 +72,7 @@ public class ZhangController {
 
 	@GetMapping("/AssistantInitial")
 	public String GetAssistantInitial(Model model, HttpSession session) {
-		return PostAssistantInitial(model,session);
+		return PostAssistantInitial(model, session);
 	}
 
 	@GetMapping("/CheckExperiment")
@@ -169,7 +169,7 @@ public class ZhangController {
 		int intassist_id = Integer.valueOf(assist_id);
 		double score = Double.valueOf(mer_grade);
 		experimentRepo.UpdateTask(intassist_id, intet_id, ints_id, score, comment);
-		return PostAssistantInitial(model,session);
+		return PostAssistantInitial(model, session);
 	}
 
 	@PostMapping("/SubmitTaskScore")
@@ -181,17 +181,20 @@ public class ZhangController {
 		int intassist_id = Integer.valueOf(assist_id);
 		double score = Double.valueOf(mer_grade);
 		taskRepo.UpdateTask(intassist_id, intet_id, ints_id, score, comment);
-		return PostAssistantInitial(model,session);
+		return PostAssistantInitial(model, session);
 	}
 
 	@PostMapping("/RequestReport")
 	public String RequestReport(String type, String class_id, Model model) {
 //		System.out.println(type+" "+class_id);
-		int cls_id=Integer.valueOf(class_id);
+		if (class_id.equals("")) {
+			return "assistant/ExperimentOrWorkReport";
+		}
+		int cls_id = Integer.valueOf(class_id);
 		if (type.equals("Task")) {
-			return TaskReport(cls_id,model);
+			return TaskReport(cls_id, model);
 		} else {
-			return ExperimentReport(cls_id,model);
+			return ExperimentReport(cls_id, model);
 		}
 	}
 }
