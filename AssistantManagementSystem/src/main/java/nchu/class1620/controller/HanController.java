@@ -12,6 +12,7 @@ import nchu.class1620.repository.AssistantRepository;
 
 @Controller
 public class HanController {
+<<<<<<< HEAD
 	@Autowired
 	private AssistantRepository AssistantRepo;
 	
@@ -26,28 +27,31 @@ public class HanController {
 		return "assistant/WorkReport";
 	}
 	
+=======
+
+>>>>>>> master
 	@GetMapping("/QueryGrade")
 	public String QuaryGrade(Model model) {
 		return "student/QueryGrade";
 	}
-	
+
 	@GetMapping("/ViewInformation")
 	public String ViewInformation(Model model) {
 		return "student/ViewInformation";
 	}
-	
+
 	@GetMapping("/ViewComment")
 	public String ViewComment(Model model) {
 		return "student/ViewComment";
 	}
-	
+
 	@GetMapping("/DisplayAssistantGrade")
 	public String DisplayAssistant(Model model) {
 		List<OwnAssistant> oa= AssistantRepo.findAll();
 		model.addAttribute("oa",oa);
 		return "teacher/DisplayAssistantGrade";
 	}
-	
+
 	@GetMapping("/WriteComment")
 	public String WriteComment(Model model) {
 		return "teacher/WriteComment";

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Meta, title, CSS, favicons, etc. -->
@@ -87,14 +87,8 @@
 
 					<!-- /menu footer buttons -->
 					<div class="sidebar-footer hidden-small">
-						<a data-toggle="tooltip" data-placement="top" title="Settings">
-							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-							<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="Lock"> <span
-							class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="Logout"
-							href="login.html"> <span class="glyphicon glyphicon-off"
+						<a data-toggle="tooltip" data-placement="top" title="Logout"
+							href="Logout"> <span class="glyphicon glyphicon-off"
 							aria-hidden="true"></span>
 						</a>
 					</div>
@@ -176,20 +170,13 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>
-								张老师 <small>Web高级编程老师</small>
-							</h3>
 						</div>
 
 						<div class="title_right">
 							<div
 								class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
 								<div class="input-group">
-									<input type="text" class="form-control"
-										placeholder="Search for..."> <span
-										class="input-group-btn">
-										<button class="btn btn-default" type="button">Go!</button>
-									</span>
+								
 								</div>
 							</div>
 						</div>
@@ -201,6 +188,16 @@
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="x_panel">
 								<div class="x_title">
+									<form action="RequestReport" method="post">
+										<div class="input-group">
+											<select name="type">
+												<option value="Task">Task</option>
+												<option value="Experiment">Experiment</option>
+											</select> <input type="text" name="class_id" placeholder="班级号" /> <input
+												class="btn btn-default submit" type="submit" value="查询" />
+										</div>
+										<div class="clearfix"></div>
+									</form>
 									<h2>
 										作业完成情况汇报 <small>Users</small>
 									</h2>
@@ -225,79 +222,26 @@
 										class="table table-striped table-bordered">
 										<thead>
 											<tr>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Content</th>
-												<th>Score</th>
-												<th>Comment</th>
+												<th>学号</th>
+												<th>姓名</th>
+												<th>实验标题</th>
+												<th>分数</th>
+												<th>评论</th>
 											</tr>
 										</thead>
 
 
 										<tbody>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
-											<tr>
-												<td>Tiger</td>
-												<td>Nixon</td>
-												<td>Java Net作业</td>
-												<td>61</td>
-												<td>完成的不错</td>
-											</tr>
+											<th:block th:each="a : ${reports}">
+												<tr>
+													<td th:text="${a.s_id}"></td>
+													<td th:text="${a.s_name}"></td>
+													<td th:text="${a.title}"></td>
+													<td th:text="${a.score}"></td>
+													<td th:text="${a.comment}"></td>
+													<td></td>
+												</tr>
+											</th:block>
 										</tbody>
 									</table>
 								</div>

@@ -1,0 +1,16 @@
+git remote add origin ssh://git@10.1.244.72:2022/DevelopTissue/AssistantManagementSystem.git
+git fetch origin zhang
+git checkout -b zhang  //-b的意思是创建 
+git checkout master
+git clone ssh://git@10.1.244.72:2022/DevelopTissue/AssistantManagementSystem.git
+
+git add AssistantManagementSystem
+git commit -m "DevelopTissue/AssistantManagementSystem"
+git push -u origin zhang
+git reset --merge
+
+git init
+
+git remote add ssh://git@github.com:developtissue/AssistantManagementSystem.git
+
+git clone ssh://git@github.com:developtissue/AssistantManagementSystem.git

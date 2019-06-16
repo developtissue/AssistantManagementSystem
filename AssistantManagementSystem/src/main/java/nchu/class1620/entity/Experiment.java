@@ -7,6 +7,7 @@ public class Experiment {
 	private int e_id;
 	private String e_name;
 	private String e_content;
+	
 	/*
 	 * Created by ZhangJing Notes:Use students link experiment with students
 	 */

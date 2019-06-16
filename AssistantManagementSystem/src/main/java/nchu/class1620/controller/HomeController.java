@@ -17,16 +17,6 @@ public class HomeController {
 	@Autowired
 	private MyService1 ms1;
 	
-	@GetMapping("/")
-	public String index(Model model) {
-		return "login";
-	}
-	
-	@GetMapping("main")
-	public String home(Model model) {
-		return "MainInterface";
-	}
-	
 	@GetMapping("/table")
 	public String displayGradeTable(Model model,String clsid,String sid) {
 		
