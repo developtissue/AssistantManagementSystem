@@ -17,16 +17,6 @@ public class HanController {
 	private AssistantRepository AssistantRepo;
 	
 	
-	@GetMapping("/ExperimentReport")
-	public String ExperimentReport(Model model) {
-		return "assistant/ExperimentReport";
-	}
-	
-	@GetMapping("/WorkReport")
-	public String WorkReport(Model model) {
-		return "assistant/WorkReport";
-	}
-	
 	@GetMapping("/QueryGrade")
 	public String QuaryGrade(Model model) {
 		return "student/QueryGrade";
