@@ -9,7 +9,7 @@ public class Report {
 	private int s_id;
 	private String s_name;
 	private String title;
-	private double socre;
+	private double score;
 	private String comment;
 
 	public int getS_id() {
@@ -36,13 +36,6 @@ public class Report {
 		this.title = title;
 	}
 
-	public double getSocre() {
-		return socre;
-	}
-
-	public void setSocre(double socre) {
-		this.socre = socre;
-	}
 
 	public String getComment() {
 		return comment;
@@ -50,6 +43,14 @@ public class Report {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public double getScore() {
+		return score;
+	}
+
+	public void setScore(double score) {
+		this.score = score;
 	}
 
 }

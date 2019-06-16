@@ -202,10 +202,12 @@
 					</div>
 					<!-- /page content -->
 					<!-- 提交成绩的form表单 -->
-					<form action="#" th:action="@{/SubmitScore}" method="post">
-						<input type="hidden" name="s_id" />
+					<form action="#" th:action="${next_url}" method="post">
+						<input type="hidden" name="s_id" th:value=${s_id} /> <input
+							type="hidden" name="et_id" th:value=${et_id} /> <input type="hidden"
+							name="assist_id" th:value=${assist_id} />
 						<div>
-							<input type="text" class="form-control" name="score"
+							<input type="text" class="form-control" name="mer_grade"
 								placeholder="分数" />
 						</div>
 						<div>
