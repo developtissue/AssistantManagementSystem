@@ -41,5 +41,5 @@ public interface StudentRepository {
 			@Result(column = "cls_id", property = "cls_id", javaType = Integer.class),
 			@Result(column = "s_password", property = "password", javaType = String.class) })
 	public ArrayList<Student> findTaskByAssitantId(@Param("assist_id") int assist_id, @Param("t_id") int t_id);
-
+	
 }

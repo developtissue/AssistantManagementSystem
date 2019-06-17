@@ -8,10 +8,10 @@ import nchu.class1620.entity.*;
  * 
  */
 
-
-
 public interface AssistantServiceInterface {
 		
 	public Assistant AssistantLogin(int assist_id ,int assist_password);
+	
+	public void UpdateStudentApplyInformation();
 	
 }

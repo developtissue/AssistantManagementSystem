@@ -31,6 +31,13 @@ public interface AssistantRepository {
 	@Select("SELECT * from assistant where assist_id=#{assist_id} and assist_password=#{password}")
 	public Assistant findAssistantById(@Param("assist_id") int assist_id , @Param("password") int password);
 	
+	@Select("SELECT max(assist_id) from assistant ")
+	public int findMaxId();
+		
+	@Select("insert into assistant(assist_id , assist_name , assist_password) values(#{assist_id},#{name},#{password})")
+	public Assistant InsertAssistant(@Param("assist_id") int assist_id, @Param("name") int name , @Param("password") int password);
+	
+	
 	
 }
 
