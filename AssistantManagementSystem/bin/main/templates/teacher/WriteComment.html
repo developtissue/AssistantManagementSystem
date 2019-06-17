@@ -1,68 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
-    <title>Gentelella Alela! | </title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link href="/reference/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/reference/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="/reference/vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="/reference/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-wysiwyg -->
-    <link href="/reference/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-    <!-- Select2 -->
-    <link href="/reference/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-    <!-- Switchery -->
-    <link href="/reference/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-    <!-- starrr -->
-    <link href="/reference/vendors/starrr/dist/starrr.css" rel="stylesheet">
-    <!-- bootstrap-daterangepicker -->
-    <link href="/reference/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+<title>Gentelella Alela! |</title>
 
-    <!-- Custom Theme Style -->
-    <link href="/reference/build/css/custom.min.css" rel="stylesheet">
-  </head>
+<!-- Bootstrap -->
+<link href="/reference/vendors/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- Font Awesome -->
+<link href="/reference/vendors/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<!-- NProgress -->
+<link href="/reference/vendors/nprogress/nprogress.css" rel="stylesheet">
+<!-- iCheck -->
+<link href="/reference/vendors/iCheck/skins/flat/green.css"
+	rel="stylesheet">
+<!-- bootstrap-wysiwyg -->
+<link
+	href="/reference/vendors/google-code-prettify/bin/prettify.min.css"
+	rel="stylesheet">
+<!-- Select2 -->
+<link href="/reference/vendors/select2/dist/css/select2.min.css"
+	rel="stylesheet">
+<!-- Switchery -->
+<link href="/reference/vendors/switchery/dist/switchery.min.css"
+	rel="stylesheet">
+<!-- starrr -->
+<link href="/reference/vendors/starrr/dist/starrr.css" rel="stylesheet">
+<!-- bootstrap-daterangepicker -->
+<link
+	href="/reference/vendors/bootstrap-daterangepicker/daterangepicker.css"
+	rel="stylesheet">
 
-  <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
-            </div>
+<!-- Custom Theme Style -->
+<link href="/reference/build/css/custom.min.css" rel="stylesheet">
+</head>
 
-            <div class="clearfix"></div>
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a href="index.html" class="site_title"><i class="fa fa-paw"></i>
+							<span>Gentelella Alela!</span></a>
+					</div>
 
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="/reference/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>小明</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
+					<div class="clearfix"></div>
 
-            <br />
+					<!-- menu profile quick info -->
+					<div class="profile clearfix">
+						<div class="profile_pic">
+							<img src="/reference/images/img.jpg" alt="..."
+								class="img-circle profile_img">
+						</div>
+						<div class="profile_info">
+							<h2 th:text=${t.name}>Welcome,<span th:text=${t.name}></span></h2>  
+						</div>
+					</div>
+					<!-- /menu profile quick info -->
 
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <h3>General</h3>
-                <ul class="nav side-menu">
-                <li><a><i class="fa fa-edit"></i> 老师界面 <span
+					<br />
+
+					<!-- sidebar menu -->
+					<div id="sidebar-menu"
+						class="main_menu_side hidden-print main_menu">
+						<div class="menu_section">
+							<h3>General</h3>
+							<ul class="nav side-menu">
+								<li><a><i class="fa fa-edit"></i> 老师界面 <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="ViewPostRecruitment">查看已发布的招聘信息</a></li>
@@ -73,170 +84,196 @@
 										<li><a href="WriteComment">添加评价</a></li>
 									</ul></li>
 
-                </ul>
-              </div>
+							</ul>
+						</div>
 
-            </div>
-            <!-- /sidebar menu -->
+					</div>
+					<!-- /sidebar menu -->
 
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
+					<!-- /menu footer buttons -->
+					<div class="sidebar-footer hidden-small">
+						<a data-toggle="tooltip" data-placement="top" title="Settings">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</a> <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+							<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+						</a> <a data-toggle="tooltip" data-placement="top" title="Lock"> <span
+							class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+						</a> <a data-toggle="tooltip" data-placement="top" title="Logout"
+							href="login.html"> <span class="glyphicon glyphicon-off"
+							aria-hidden="true"></span>
+						</a>
+					</div>
+					<!-- /menu footer buttons -->
+				</div>
+			</div>
 
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
+			<!-- top navigation -->
+			<div class="top_nav">
+				<div class="nav_menu">
+					<nav>
+						<div class="nav toggle">
+							<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+						</div>
 
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
+					</nav>
+				</div>
+			</div>
+			<!-- /top navigation -->
 
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>助教考核</h3>
-              </div>
+			<!-- page content -->
+			<div class="right_col" role="main">
+				<div class="">
+					<div class="page-title">
+						<div class="title_left">
+							<h3>助教考核</h3>
+						</div>
 
-              
-            </div>
-            <div class="clearfix"></div>
-           
 
-            <div class="row">
-             
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>教师评价</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+					</div>
+					<div class="clearfix"></div>
 
-                    <!-- start form for validation -->
-				<form class="form-horizontal form-label-left">
-                  <div class="form-group">
-                    <label class="control-label col-md-3" for="first-name">学号 <span class="required">*</span>
-                    </label>
-                    <div class="col-md-7">
-                      <input type="text" id="first-name2" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
-                  </div>
-				  <div class="form-group">
-                    <label class="control-label col-md-3" for="first-name">姓名 <span class="required">*</span>
-                    </label>
-                    <div class="col-md-7">
-                      <input type="text" id="first-name2" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
-                  </div>
-				   <div class="form-group">
-                    <label class="control-label col-md-3" for="last-name">对应课程 <span class="required">*</span>
-                    </label>
-                    <div class="col-md-7">
-                      <input type="text" id="last-name2" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
-                    </div>
-                  </div>
-                  
-				    <label for="message">助教表现评价 (20 chars min, 100 max) :</label>
-				   <textarea id="message" required="required" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
-                            data-parsley-validation-threshold="10"></textarea>
 
-                        <br/>
-						 <span class="btn btn-primary">提交</span>
-                </form>
-                   
-                    <!-- end form for validations -->
+					<div class="row">
 
-                  </div>
-                </div>
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>教师评价</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i
+											class="fa fa-chevron-up"></i></a></li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown" role="button" aria-expanded="false"><i
+											class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a></li>
+											<li><a href="#">Settings 2</a></li>
+										</ul></li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a>
+									</li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
 
-            </div>
-         
-        </div>
-        <!-- /page content -->
+								<!-- start form for validation -->
+								<form class="form-horizontal form-label-left"
+									action="SubmitGradeAndComment" method="post">
 
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-      </div>
-    </div>
-     </div>
+									<div class="form-group">
+										<label class="control-label col-md-3" for="first-name">工号
+											<span class="required">*</span>
+										</label>
+										<div class="col-md-7">
+											<input type="text" id="first-name2" required="required"
+												class="form-control col-md-7 col-xs-12" name="t_id">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3" for="first-name">学号
+											<span class="required">*</span>
+										</label>
+										<div class="col-md-7">
+											<input type="text" id="first-name2" required="required"
+												class="form-control col-md-7 col-xs-12" name="Assistid">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3" for="last-name">对应课程
+											<span class="required">*</span>
+										</label>
+										<div class="col-md-7">
+											<input type="text" id="last-name2" required="required"
+												class="form-control col-md-7 col-xs-12" name="CourseName">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3" for="first-name">成绩
+											<span class="required">*</span>
+										</label>
+										<div class="col-md-7">
+											<input type="text" id="first-name2" required="required"
+												class="form-control col-md-7 col-xs-12" name="AssistGrade">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3" for="first-name">评价
+											<span class="required">*</span>
+										</label>
+										<div class="col-md-7">
+											<input type="text" id="first-name2" required="required"
+												class="form-control col-md-7 col-xs-12" name="comment">
+										</div>
+									</div>
 
-    <!-- jQuery -->
-    <script src="/reference/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="/reference/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="/reference/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="/reference/vendors/nprogress/nprogress.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="/reference/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="/reference/vendors/iCheck/icheck.min.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="/reference/vendors/moment/min/moment.min.js"></script>
-    <script src="/reference/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- bootstrap-wysiwyg -->
-    <script src="/reference/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-    <script src="/reference/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-    <script src="/reference/vendors/google-code-prettify/src/prettify.js"></script>
-    <!-- jQuery Tags Input -->
-    <script src="/reference/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
-    <!-- Switchery -->
-    <script src="/reference/vendors/switchery/dist/switchery.min.js"></script>
-    <!-- Select2 -->
-    <script src="/reference/vendors/select2/dist/js/select2.full.min.js"></script>
-    <!-- Parsley -->
-    <script src="/reference/vendors/parsleyjs/dist/parsley.min.js"></script>
-    <!-- Autosize -->
-    <script src="/reference/vendors/autosize/dist/autosize.min.js"></script>
-    <!-- jQuery autocomplete -->
-    <script src="/reference/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
-    <!-- starrr -->
-    <script src="/reference/vendors/starrr/dist/starrr.js"></script>
-    <!-- Custom Theme Scripts -->
-    <script src="/reference/build/js/custom.min.js"></script>
-	
-  </body>
+									<br />
+									<div>
+										<input class="btn btn-default submit" type="submit" value="提交" />
+									</div>
+								</form>
+
+								<!-- end form for validations -->
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- /page content -->
+
+				<!-- footer content -->
+				<footer>
+					<div class="pull-right">
+						Gentelella - Bootstrap Admin Template by <a
+							href="https://colorlib.com">Colorlib</a>
+					</div>
+					<div class="clearfix"></div>
+				</footer>
+				<!-- /footer content -->
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="/reference/vendors/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="/reference/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- FastClick -->
+	<script src="/reference/vendors/fastclick/lib/fastclick.js"></script>
+	<!-- NProgress -->
+	<script src="/reference/vendors/nprogress/nprogress.js"></script>
+	<!-- bootstrap-progressbar -->
+	<script
+		src="/reference/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+	<!-- iCheck -->
+	<script src="/reference/vendors/iCheck/icheck.min.js"></script>
+	<!-- bootstrap-daterangepicker -->
+	<script src="/reference/vendors/moment/min/moment.min.js"></script>
+	<script
+		src="/reference/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- bootstrap-wysiwyg -->
+	<script
+		src="/reference/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+	<script src="/reference/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+	<script src="/reference/vendors/google-code-prettify/src/prettify.js"></script>
+	<!-- jQuery Tags Input -->
+	<script
+		src="/reference/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+	<!-- Switchery -->
+	<script src="/reference/vendors/switchery/dist/switchery.min.js"></script>
+	<!-- Select2 -->
+	<script src="/reference/vendors/select2/dist/js/select2.full.min.js"></script>
+	<!-- Parsley -->
+	<script src="/reference/vendors/parsleyjs/dist/parsley.min.js"></script>
+	<!-- Autosize -->
+	<script src="/reference/vendors/autosize/dist/autosize.min.js"></script>
+	<!-- jQuery autocomplete -->
+	<script
+		src="/reference/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+	<!-- starrr -->
+	<script src="/reference/vendors/starrr/dist/starrr.js"></script>
+	<!-- Custom Theme Scripts -->
+	<script src="/reference/build/js/custom.min.js"></script>
+
+</body>
 </html>
