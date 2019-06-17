@@ -7,6 +7,11 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+/*
+ * author: 16202125-吴俊雄
+ * LogAspect aop日志测试打印类
+ */
+
 @Component
 @Aspect
 public class LogAspect {

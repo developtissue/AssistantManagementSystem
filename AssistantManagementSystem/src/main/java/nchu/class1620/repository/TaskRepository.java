@@ -40,4 +40,11 @@ public interface TaskRepository {
 			+ "where assist_id=#{assist_id} and task_id=#{task_id} and s_id=#{s_id};")
 	public void UpdateTask(@Param("assist_id") int assist_id, @Param("task_id") int task_id, @Param("s_id") int s_id,
 			@Param("task_grade") double task_grade, @Param("comment") String comment);
+	
+	/*
+	 * author: 16202125-吴俊雄
+	 * TaskRepository 进行数据库访问
+	 */
+	@Select("SELECT * from task where t_id=#{tid} limit 1") 
+	public Task findById(@Param("tid")Integer tid);
 }

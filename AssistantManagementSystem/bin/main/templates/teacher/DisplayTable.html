@@ -264,7 +264,6 @@
 					         </tr>
 					     </thead>
 					 
-
                       <tbody>
                               <tr  th:each="myentity1 : ${s_grades_list}"> 
 							          <td th:text="${myentity1.s_id}"></td>  
@@ -274,103 +273,8 @@
 							          <td th:text="${myentity1.e_content}"></td> 
 							          <td th:text="${myentity1.ae_grade}"></td>                        
 					          </tr>         
-                        <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                        </tr>
-                        <tr>
-                          <td>Garrett Winters</td>
-                          <td>Accountant</td>
-                          <td>Tokyo</td>
-                          <td>63</td>
-                          <td>2011/07/25</td>
-                          <td>$170,750</td>
-                        </tr>
-                        <tr>
-                          <td>Ashton Cox</td>
-                          <td>Junior Technical Author</td>
-                          <td>San Francisco</td>
-                          <td>66</td>
-                          <td>2009/01/12</td>
-                          <td>$86,000</td>
-                        </tr>
-                        <tr>
-                          <td>Cedric Kelly</td>
-                          <td>Senior Javascript Developer</td>
-                          <td>Edinburgh</td>
-                          <td>22</td>
-                          <td>2012/03/29</td>
-                          <td>$433,060</td>
-                        </tr>
-                        <tr>
-                          <td>Airi Satou</td>
-                          <td>Accountant</td>
-                          <td>Tokyo</td>
-                          <td>33</td>
-                          <td>2008/11/28</td>
-                          <td>$162,700</td>
-                        </tr>
-                        <tr>
-                          <td>Brielle Williamson</td>
-                          <td>Integration Specialist</td>
-                          <td>New York</td>
-                          <td>61</td>
-                          <td>2012/12/02</td>
-                          <td>$372,000</td>
-                        </tr>
-                       <tr>
-                          <td>Herrod Chandler</td>
-                          <td>Sales Assistant</td>
-                          <td>San Francisco</td>
-                          <td>59</td>
-                          <td>2012/08/06</td>
-                          <td>$137,500</td>
-                        </tr>
-                        <tr>
-                          <td>Rhona Davidson</td>
-                          <td>Integration Specialist</td>
-                          <td>Tokyo</td>
-                          <td>55</td>
-                          <td>2010/10/14</td>
-                          <td>$327,900</td>
-                        </tr>
-                        <tr>
-                          <td>Colleen Hurst</td>
-                          <td>Javascript Developer</td>
-                          <td>San Francisco</td>
-                          <td>39</td>
-                          <td>2009/09/15</td>
-                          <td>$205,500</td>
-                        </tr>
-                        <tr>
-                          <td>Sonya Frost</td>
-                          <td>Software Engineer</td>
-                          <td>Edinburgh</td>
-                          <td>23</td>
-                          <td>2008/12/13</td>
-                          <td>$103,600</td>
-                        </tr>
-                        <tr>
-                          <td>Thor Walton</td>
-                          <td>Developer</td>
-                          <td>New York</td>
-                          <td>61</td>
-                          <td>2013/08/11</td>
-                          <td>$98,540</td>
-                        </tr>
-                        <tr>
-                          <td>Finn Camacho</td>
-                          <td>Support Engineer</td>
-                          <td>San Francisco</td>
-                          <td>47</td>
-                          <td>2009/07/07</td>
-                          <td>$87,500</td>
-                        </tr>
                       </tbody>
+                      
                     </table>
                   </div>
                 </div>
@@ -403,21 +307,27 @@
                          以班级为单位，学生作业成绩表
                     </p>
                       <form action="table" method="get">
-                     班 级 号：<input type="text" name="clsid" th:value="${clsid}">
+                     班 级 号：<input type="text" name="clsid2" th:value="${clsid2}">
                      <input type="submit" value="搜索">
                     </form><br>
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
 					             <th>学号</th>
-					             <th>班级号</th>
 					             <th>姓名</th>
 					             <th>作业名</th>
+					             <th>作业内容</th>
 					             <th>成绩</th>                      
                         </tr>
                       </thead>
                       <tbody>
-                        
+                             <tr  th:each="myentity2 : ${s_taskGrades_list2}"> 
+							          <td th:text="${myentity2.s_id}"></td>  
+							          <td th:text="${myentity2.s_name}"></td>  
+							          <td th:text="${myentity2.task_name}"></td>  
+							          <td th:text="${myentity2.task_content}"></td> 
+							          <td th:text="${myentity2.task_grade}"></td>                        
+					          </tr>       
                       </tbody>
                     </table>
                   </div>
@@ -507,7 +417,7 @@
                             以单个学生为单位，学生作业成绩表
                     </p>
                      <form action="table" method="get">
-                     学 号：<input type="text" name="sid" th:value="${sid}">
+                     学 号：<input type="text" name="sid2" th:value="${sid2}">
                      <input type="submit" value="搜索">
                     </form><br>
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
@@ -516,11 +426,18 @@
 					             <th>学号</th>
 					             <th>姓名</th>
 					             <th>作业名</th>
+					             <th>作业内容</th>
 					             <th>成绩</th>                     
                         </tr>
                       </thead>
                       <tbody>
-                      
+ 							 <tr  th:each="myentity2 : ${s_taskGrades_list}"> 
+							          <td th:text="${myentity2.s_id}"></td>  
+							          <td th:text="${myentity2.s_name}"></td>  
+							          <td th:text="${myentity2.task_name}"></td>  
+							          <td th:text="${myentity2.task_content}"></td> 
+							          <td th:text="${myentity2.task_grade}"></td>                        
+					          </tr>       
                       </tbody>
                     </table>
                   </div>
@@ -554,31 +471,83 @@
                              以班级为单位，各个学生的所有课程实验成绩的平均分
                     </p>
                     <form action="table" method="get">
-                     班 级 号：<input type="text" name="clsid" th:value="${clsid}">
+                     班 级 号：<input type="text" name="clsid3" th:value="${clsid3}">
                      <input type="submit" value="搜索">
                     </form><br>
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
 					           <th>学号</th>
-					             <th>姓名</th>
-					             <th>平均分</th>                      
+					           <th>姓名</th>
+					           <th>平均分</th>                      
                         </tr>
                       </thead>
                       <tbody>
-                      
+                              <tr  th:each="myentity3 : ${s_avgGrades_list}"> 
+							          <td th:text="${myentity3.s_id}"></td>  
+							          <td th:text="${myentity3.s_name}"></td>  
+							          <td th:text="${myentity3.avgGrade}"></td>                        
+					          </tr>         
                       </tbody>
                     </table>
                   </div>
                  </div>
                </div>
                   
+      <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>报 表 六<small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <p class="text-muted font-13 m-b-30">
+                             以班级为单位，各个学生的所有作业成绩的平均分
+                    </p>
+                    <form action="table" method="get">
+                     班 级 号：<input type="text" name="clsid4" th:value="${clsid4}">
+                     <input type="submit" value="搜索">
+                    </form><br>
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+					           <th>学号</th>
+					           <th>姓名</th>
+					           <th>平均分</th>                      
+                        </tr>
+                      </thead>
+                      <tbody>
+                              <tr  th:each="myentity3 : ${s_avgGrades_list2}"> 
+							          <td th:text="${myentity3.s_id}"></td>  
+							          <td th:text="${myentity3.s_name}"></td>  
+							          <td th:text="${myentity3.avgGrade}"></td>                        
+					          </tr>         
+                      </tbody>
+                    </table>
+                  </div>
+                 </div>
+               </div>
  
                 </div>
               </div>
             </div>
-        <!--   </div>
-        </div> -->
+       </div>
+        </div> 
         <!-- /page content -->
 
         <!-- footer content -->
