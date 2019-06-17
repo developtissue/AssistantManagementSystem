@@ -4,6 +4,11 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import nchu.class1620.entity.Experiment;
 
+/*
+ * author: 16202125-吴俊雄
+ * ExperimentRepository 进行数据库访问
+ */
+
 @Mapper
 public interface ExperimentRepository {
 

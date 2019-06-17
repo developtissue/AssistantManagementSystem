@@ -5,6 +5,11 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import nchu.class1620.dto.MyEntity1;
 
+/*
+ * author: 16202125-吴俊雄
+ * QueryRepository 进行数据库访问  进行初期测试使用
+ */
+
 @Mapper
 public interface QueryRepository {
 /*

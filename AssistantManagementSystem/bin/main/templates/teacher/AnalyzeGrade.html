@@ -81,6 +81,13 @@
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
+               <a data-toggle="tooltip" data-placement="top" title="test1" href="#" id="test">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+              
+              <a data-toggle="tooltip" data-placement="top" title="test2" href="#" id="test2">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
             </div>
             <!-- menu footer buttons -->
           </div>
@@ -209,7 +216,11 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>测试版...图表<small>暂时性修改部分JQuery代码......数据结构/操作系统/计算机网络</small></h2>
+                  
+           <h3> 实 验 <small> 以单个学生为单位查询所有实验成绩 </small></h3>
+                    学 号:  <input type="text" id="searchText">
+		<input type="button" id="searchButton" value="查询">
+                    
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -228,7 +239,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <canvas id="lineChart"></canvas>
+                    <canvas id="lineChart2"></canvas>
                   </div>
                 </div>
               </div>
@@ -236,7 +247,11 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>实验/作业<small>以班级为单位，计算出各次的平均分</small></h2>
+                  
+                  <h3> 实验/作业 <small>以班级为单位，计算出各个学生的平均分</small></h3>
+                        班 级 号: <input type="text" id="searchText2">     
+		<input type="button" id="searchButton2" value="查询">
+		
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -255,7 +270,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <canvas id="mybarChart"></canvas>
+                    <canvas id="mybarChart2"></canvas>
                   </div>
                 </div>
               </div>
@@ -267,7 +282,11 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>个人实验成绩<small>各次实验成绩占比</small></h2>
+                  
+                  <h3> 作 业 <small>各次作业成绩占比平均成绩</small></h3>
+                       学 号: <input type="text" id="searchText3">     
+		<input type="button" id="searchButton3" value="查询">
+		
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -286,14 +305,18 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <canvas id="canvasDoughnut"></canvas>
+                    <canvas id="canvasDoughnut2"></canvas>
                   </div>
                 </div>
               </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>个人作业成绩<small>各次作业成绩占比</small></h2>
+                  
+                  	  <h3> 作 业 <small>各次作业成绩占比次数</small></h3>
+                       学 号: <input type="text" id="searchText4">
+		<input type="button" id="searchButton4" value="查询"><br>
+
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -312,7 +335,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <canvas id="pieChart"></canvas>
+                    <canvas id="pieChart2"></canvas>
                   </div>
                 </div>
               </div>
@@ -320,8 +343,6 @@
             
             <div class="clearfix"></div>
             
-           
-        
           </div>
         </div>
         <!-- page content -->
@@ -350,6 +371,163 @@
 
     <!-- Custom Theme Scripts -->
     <script src="reference/js/custom.js"></script>
+	
+	
+	<!-- author: 16202125-吴俊雄   --> 
+	<!-- 通过 ajax联动js 动态改变数据分析chart图表   -->
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	    	
+	    	var line = new Chart(document.getElementById("lineChart2"), {
+				  type: 'line',
+				  data: {
+					labels: [],
+					datasets: [{
+					  label: "My First dataset",
+					  backgroundColor: "rgba(38, 185, 154, 0.31)",
+					  borderColor: "rgba(38, 185, 154, 0.7)",
+					  pointBorderColor: "rgba(38, 185, 154, 0.7)",
+					  pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+					  pointHoverBackgroundColor: "#fff",
+					  pointHoverBorderColor: "rgba(220,220,220,1)",
+					  pointBorderWidth: 1,
+					  data: []
+					}]
+				  },
+				});
+	   	$('#searchButton').click(function(){
+	   		$.ajax({
+	   	        url: "/test/" + $('#searchText').val()
+	   	    }).then(function(data) {
+	   	    	line.data.datasets[0].data = data.garde;
+				line.data.datasets[0].label = data.stuName;
+				line.data.labels = data.eName;
+				line.update();
+	   	    });
+	   	});
+	    });
+	</script>
+	
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	    	var bar = new Chart(document.getElementById("mybarChart2"), {
+				type: 'bar',
+				data: {
+				  labels: [],
+				  datasets: [{
+					label: '# of Votes1',
+					backgroundColor: "#26B99A",
+					data: []
+				  }, {
+					label: '# of Votes2',
+					backgroundColor: "#03586A",
+					data: []
+				  }]
+				 },
+				});
+	   	$('#searchButton2').click(function(){
+	   		$.ajax({
+	   	        url: "/test2/" + $('#searchText2').val()
+	   	    }).then(function(data) {
+	   	    	bar.data.datasets[0].data = data.map1.garde;
+				bar.data.datasets[0].label = data.map1.stuName;
+				bar.data.labels = data.map1.stuid;
+				bar.data.datasets[1].data = data.map2.garde2;
+				bar.data.datasets[1].label = data.map2.stuName2;
+				bar.update();
+	   	    });
+	   	});
+	    });
+	</script>
+	
+	<script type="text/javascript">
+	 $(document).ready(function(){
+		 //alert("wjx");
+		 var cd = new Chart(document.getElementById("canvasDoughnut2"),{
+			 type: 'doughnut',
+			 data:{
+						labels: [
+						  "orange Grey",
+						  "Purple Color",
+						  "Gray Color",
+						  "Green Color",
+						  "Blue Color",
+						  "Dark Color"
+						],
+						datasets: [{
+						  data: [120, 50, 140, 180, 100, 60],
+						  backgroundColor: [
+						    "#FF8C00",
+							"#9B59B6",
+							"#BDC3C7",
+							"#26B99A",
+							"#3498DB",
+							"#455C73"
+						  ],
+						  hoverBackgroundColor: [
+							"#FF8C00",
+							"#B370CF",
+							"#CFD4D8",
+							"#36CAAB",
+							"#49A9EA",
+							"#34495E"
+						  ]
+
+						}]
+					  },
+					 });
+	   	$('#searchButton3').click(function(){
+	   		$.ajax({
+	   	        url: "/test3/" + $('#searchText3').val()
+	   	    }).then(function(data) {
+	   	    	cd.data.datasets[0].data = data.counts;
+				cd.data.labels = data.ename;
+	   	    	cd.update();
+	   	    });
+	   	});
+	    });
+	</script>
+	
+	<script type="text/javascript">
+	 $(document).ready(function(){
+		 //alert("wjx");
+		 var pie = new Chart(document.getElementById("pieChart2"),{
+			 type: 'pie',
+			 data:{
+				 datasets: [{
+					  data: [120, 50, 140, 180, 100, 60],
+					  backgroundColor: [
+						"#98FB98",
+						"#3498DB",
+						"#FFA500",
+						"#FF7F50",
+						"#BA2BE2",
+						"#FFC0CB"
+					  ],
+					  label: 'My dataset' // for legend
+					}],
+					labels: [
+					  "orange",
+					  "coral",
+					  "poleGreen",
+					  "violet",
+					  "blue",
+					  "pink"
+					]
+				},
+			});
+	 	$('#searchButton4').click(function(){
+	   		$.ajax({
+	   	        url: "/test4/" + $('#searchText4').val()
+	   	    }).then(function(data) {
+	   	    	pie.data.datasets[0].data = data.counts;
+	   	    	pie.data.labels = data.taskName;
+	   	    	pie.update();
+	   	    });
+	   	});
+	    });
+	</script>
+
 	
   </body>
 </html>

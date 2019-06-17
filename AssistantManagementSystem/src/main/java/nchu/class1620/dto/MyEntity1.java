@@ -1,5 +1,10 @@
 package nchu.class1620.dto;
 
+/*
+ * author: 16202125-吴俊雄
+ * MyEntity1 获取学生实验成绩的dto类
+ */
+
 public class MyEntity1 {
 
 	private int s_id;
