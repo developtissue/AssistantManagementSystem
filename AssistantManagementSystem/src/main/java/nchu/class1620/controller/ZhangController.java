@@ -24,6 +24,8 @@ import nchu.class1620.entity.Task;
 import nchu.class1620.repository.ExperimentRepository;
 import nchu.class1620.repository.StudentRepository;
 import nchu.class1620.repository.TaskRepository;
+import nchu.class1620.service.ExperimentIO;
+import nchu.class1620.service.TaskIO;
 
 /*
  * Created by ZhangJing
@@ -78,32 +80,13 @@ public class ZhangController {
 	@GetMapping("/CheckExperiment")
 	public String CheckExperiment(@RequestParam(name = "e_id", required = true) int e_id,
 			@RequestParam(name = "s_id", required = true) int s_id, Model model) {
-//		System.out.println("/CheckExperiment");
 		model.addAttribute("title", taskRepo.findByTaskName(e_id));
 		model.addAttribute("et_id", e_id);
 		model.addAttribute("s_id", s_id);
 		model.addAttribute("assist_id", assist_id);
 		model.addAttribute("next_url", "SubmitExperimentScore");
-//		System.out.println(taskRepo.findByTaskName(e_id));
-		File file = new File(this.getClass().getResource("").getPath());
-		file = file.getParentFile();
-		file = file.getParentFile();
-		file = file.getParentFile();
-		file = file.getParentFile();
-		file = file.getParentFile();
-		String url = file.getPath() + "/src/main/resources/static/Experiment/1601/1/" + s_id + ".txt";
-//		System.out.println(url);
-		file = new File(url);
-		String text = "";
-		try (FileReader reader = new FileReader(file); BufferedReader br = new BufferedReader(reader)) {
-			String line;
-			while ((line = br.readLine()) != null) {
-				text = text + line + "\n";
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-//		System.out.println(text);
+		ExperimentIO ei = new ExperimentIO();
+		String text = ei.ReadExperiment(assist_id, e_id, s_id);
 		model.addAttribute("content", text);
 		return "assistant/CheckExperimentOrWork";
 	}
@@ -117,26 +100,8 @@ public class ZhangController {
 		model.addAttribute("s_id", s_id);
 		model.addAttribute("assist_id", assist_id);
 		model.addAttribute("next_url", "SubmitTaskScore");
-//		System.out.println(experimentRepo.findByExperimentName(t_id));
-		String text = "";
-		File file = new File(this.getClass().getResource("").getPath());
-		file = file.getParentFile();
-		file = file.getParentFile();
-		file = file.getParentFile();
-		file = file.getParentFile();
-		file = file.getParentFile();
-		String url = file.getPath() + "/src/main/resources/static/Task/1601/1/" + s_id + ".txt";
-//		System.out.prsintln(url);
-		file = new File(url);
-		try (FileReader reader = new FileReader(file); BufferedReader br = new BufferedReader(reader)) {
-			String line;
-			while ((line = br.readLine()) != null) {
-				text += line;
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-//		System.out.println(text);
+		TaskIO ti = new TaskIO();
+		String text = ti.ReadTask(assist_id, t_id, s_id);
 		model.addAttribute("content", text);
 		return "assistant/CheckExperimentOrWork";
 	}
