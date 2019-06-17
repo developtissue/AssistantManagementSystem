@@ -159,7 +159,7 @@
                             <th class="column-title">学号 </th>
 							<th class="column-title">姓名 </th>
                             <th class="column-title">考核成绩</th>
-							<th class="column-title">操作</th>
+							<th class="column-title">评价</th>
                            
                             <th class="bulk-actions" colspan="7">
                               <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
@@ -174,7 +174,8 @@
 								<td th:text="${a.assist_id}"></td>
 								<td th:text="${a.assist_name}"></td>
 								<td th:text="${a.assist_grade}"></td>
-								<td class=" "><a href ="#">查看汇报情况</a></td>
+								<td th:text="${a.comment}"></td>
+								
                           </tr>
                         </tbody>
                       </table>

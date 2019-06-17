@@ -5,6 +5,7 @@ package nchu.class1620.entity;
  * */
 public class OwnAssistant {
   
+	private int t_id;
 	private int assist_id;
 	private String assist_name;
 	private double assist_grade;
@@ -13,6 +14,15 @@ public class OwnAssistant {
 	public OwnAssistant(){
 		
 	}
+	
+	public int getT_id() {
+		return t_id;
+	}
+
+	public void setT_id(int t_id) {
+		this.t_id = t_id;
+	}
+
 	public int getAssist_id() {
 		return assist_id;
 	}

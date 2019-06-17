@@ -36,7 +36,6 @@ public interface AssistantRepository {
 	public Assistant findAssistantById(@Param("assist_id") int assist_id , @Param("password") int password);
 
 	
-	
 }
 
 
