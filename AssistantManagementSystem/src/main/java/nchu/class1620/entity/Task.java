@@ -1,5 +1,6 @@
 package nchu.class1620.entity;
 
+
 import java.util.ArrayList;
 
 /*
@@ -37,6 +38,7 @@ public class Task {
 		this.t_content = t_content;
 	}
 
+
 	public ArrayList<Student> getStudents() {
 		return students;
 	}
@@ -44,5 +46,4 @@ public class Task {
 	public void setStudents(ArrayList<Student> students) {
 		this.students = students;
 	}
-
 }

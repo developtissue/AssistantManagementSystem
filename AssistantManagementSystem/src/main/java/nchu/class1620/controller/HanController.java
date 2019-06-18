@@ -15,7 +15,7 @@ import nchu.class1620.entity.OwnAssistant;
 import nchu.class1620.entity.Student;
 import nchu.class1620.entity.Teacher;
 import nchu.class1620.repository.AssistantRepository;
-import nchu.class1620.repository.DotaskRepository;
+import nchu.class1620.repository.DoTaskRepository;
 import nchu.class1620.repository.OwnAssistantRepository;
 import nchu.class1620.repository.TeacherRepository;
 
@@ -27,8 +27,9 @@ public class HanController {
 	@Autowired
 	private TeacherRepository TeacherRepo;
 	@Autowired
-	private DotaskRepository dotaskRepo;
 
+	private DoTaskRepository dotaskRepo;
+	
 	@GetMapping("/QueryGrade")
 	public String QuaryGrade(Model model, HttpSession session) {
 		Student s = (Student) session.getAttribute("student");

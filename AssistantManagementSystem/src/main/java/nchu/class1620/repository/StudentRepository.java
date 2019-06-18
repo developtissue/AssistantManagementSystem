@@ -11,6 +11,11 @@ import org.apache.ibatis.annotations.Select;
 
 import nchu.class1620.entity.Student;
 
+/*
+ * author: 16202125-吴俊雄
+ * StudentRepository 进行数据库访问
+ */
+
 @Mapper
 public interface StudentRepository {
 
@@ -41,5 +46,5 @@ public interface StudentRepository {
 			@Result(column = "cls_id", property = "cls_id", javaType = Integer.class),
 			@Result(column = "s_password", property = "password", javaType = String.class) })
 	public ArrayList<Student> findTaskByAssitantId(@Param("assist_id") int assist_id, @Param("t_id") int t_id);
-
+	
 }

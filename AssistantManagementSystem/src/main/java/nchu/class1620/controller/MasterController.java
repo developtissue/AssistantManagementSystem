@@ -1,13 +1,18 @@
 package nchu.class1620.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import nchu.class1620.dto.StudentApplyInformation;
+import nchu.class1620.repository.StudentApplyInformationRepository;
 import nchu.class1620.service.*;
 
 @Controller
@@ -72,11 +77,18 @@ public class MasterController {
 	
 	@GetMapping("/CheckApplyTable")
 	public String CheckApplyTable(Model model) {
+		List<StudentApplyInformation> list = adminService.findAllStudentApplyIn();
+		model.addAttribute("list" , list);
+		
 		return "admin/CheckApplyTable";
 	}
 	
-	@GetMapping("/CheckDetailTable")
-	public String CheckDetailTable(Model model) {
+	@GetMapping("/CheckDetailTable/{id}")
+	public String CheckDetailTable(Model model, @PathVariable Integer id) {
+		
+		StudentApplyInformation studentApplyInformation = adminService.findStudentApplyInforByStuid(id);
+		model.addAttribute("studentApplyInformation" , studentApplyInformation);
+		
 		return "admin/CheckDetailTable";
 	}
 	

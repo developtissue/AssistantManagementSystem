@@ -14,6 +14,12 @@ import nchu.class1620.repository.CourseRepository;
 import nchu.class1620.repository.ExperimentRepository;
 import nchu.class1620.repository.StudentRepository;
 
+/*
+ * author: 16202125-吴俊雄
+ * @Service层  
+ *  MyService1类主要进行实验成绩方面的业务逻辑操作
+ */
+
 @Service
 public class MyService1 {
 

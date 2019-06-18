@@ -26,5 +26,15 @@ public class AssistantService implements AssistantServiceInterface{
 	public Assistant AssistantLogin(int assist_id, int assist_password) {
 		return loginRepository.findAssistantById(assist_id, assist_password);
 	}
+
+	@Override
+	public void UpdateStudentApplyInformation() {
+		
+		
+	}
+	
+	
+	
+	
 	
 }

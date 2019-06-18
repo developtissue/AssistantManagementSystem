@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -30,6 +30,7 @@
 
     <!-- Custom Theme Style -->
     <link href="/reference/build/css/custom.min.css" rel="stylesheet">
+    
   </head>
 
   <body class="nav-md">
@@ -142,9 +143,11 @@
                               <input type="checkbox" id="check-all" class="flat">
                             </th>
                             <th class="column-title">学号 </th>
+                            <th class="column-title">姓名 </th>
                             <th class="column-title">申请时间 </th>
+                            <th class="column-title">老师工号</th>
                             <th class="column-title">意向老师</th>
-                            <th class="column-title">学生姓名 </th>
+                            <th class="column-title">课程名称 </th>
                             <th class="column-title">状态 </th>
                             <th class="column-title no-link last"><span class="nobr">Action</span>
                             </th>
@@ -155,127 +158,20 @@
                         </thead>
 
                         <tbody>
-                          <tr class="even pointer">
+                          <tr class="even pointer" th:each = "s : ${list}">
                             <td class="a-center ">
                               <input type="checkbox" class="flat" name="table_records">
                             </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小米</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
+                            <td class=" " th:text="${s.s_id}" id = 'ids'></td>
+                            <td class=" " th:text="${s.s_name}" ></td>
+                            <td class=" " th:text="${s.date}"></td>
+                            <td class=" " th:text="${s.t_id}"></td>
+                            <td class=" " th:text="${s.t_name}"></td>
+                            <td class=" " th:text="${s.c_name}"></td>
+                            <td class=" " th:text="${s.status}"></td>
+                            <td class=" last"><button class="checkoutBtn" th:attr="data-id=${s.s_id}" value="查看">查看</button></td>
                           </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111112</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小好</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111113</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小德</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111114</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小派</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111115</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小派</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111116</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小风</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111117</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小于</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111118</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小于</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111119</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小若</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111120</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰</td>
-                            <td class=" ">小美</td>
-                            <td class=" ">未录用</td>
-                            <td class=" last"><a href="CheckDetailTable">查看</a>
-                            </td>
-                          </tr>
+                          
                         </tbody>
                       </table>
                     </div>
@@ -342,7 +238,9 @@
     <!-- starrr -->
     <script src="/reference/vendors/starrr/dist/starrr.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="/reference/build/js/custom.min.js"></script>
+    <script src="/reference/build/js/custom.js"></script>
+	
+	<script src="/Js/CheckApplyTable.js"></script>
 	
   </body>
 </html>
