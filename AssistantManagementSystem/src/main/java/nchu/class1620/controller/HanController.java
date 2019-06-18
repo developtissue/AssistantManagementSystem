@@ -10,11 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import nchu.class1620.dto.MyEntity4;
 import nchu.class1620.entity.DoTask;
 import nchu.class1620.entity.OwnAssistant;
 import nchu.class1620.entity.Student;
 import nchu.class1620.entity.Teacher;
-import nchu.class1620.repository.AssistantRepository;
 import nchu.class1620.repository.DoTaskRepository;
 import nchu.class1620.repository.OwnAssistantRepository;
 import nchu.class1620.repository.TeacherRepository;
@@ -27,7 +27,6 @@ public class HanController {
 	@Autowired
 	private TeacherRepository TeacherRepo;
 	@Autowired
-
 	private DoTaskRepository dotaskRepo;
 	
 	@GetMapping("/QueryGrade")
@@ -52,7 +51,7 @@ public class HanController {
 
 	@GetMapping("/DisplayAssistantGrade")
 	public String DisplayAssistant(Model model) {
-		List<OwnAssistant> oa = OwnAssistRepo.findAll();
+		List<MyEntity4> oa = OwnAssistRepo.findAll();
 		model.addAttribute("oa", oa);
 		return "teacher/DisplayAssistantGrade";
 	}
@@ -71,9 +70,10 @@ public class HanController {
 		System.out.println(c_id);
 		System.out.println(AssistGrade);
 		System.out.println(comment);
-		OwnAssistRepo.InsertAll(t_id,Assistid,c_id,AssistGrade,comment);
-		OwnAssistant ownassist = OwnAssistRepo.findById(Assistid);
-		model.addAttribute("oa", ownassist);
+		OwnAssistRepo.UpdateGradeAndMessage(t_id,Assistid,c_id,AssistGrade,comment);
+		/* model.addAttribute("oa", oa); */
+		List<MyEntity4> oa = OwnAssistRepo.findAll();
+		model.addAttribute("oa", oa);
 		return "teacher/DisplayAssistantGrade"; 
 	}
 
