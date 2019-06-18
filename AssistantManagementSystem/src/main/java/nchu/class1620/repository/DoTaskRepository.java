@@ -23,4 +23,7 @@ public interface DoTaskRepository {
 	@Select("SELECT * from dotask where s_id=#{sid}")
 	public List<DoTask> findByStuId(Integer sid);
 	
+	@Select("SELECT * from dotask where s_id=#{sid} limit 1")
+	public DoTask findById(Integer sid);
+	
 }
