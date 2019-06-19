@@ -5,10 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import nchu.class1620.dto.AssistantAllInformation;
 import nchu.class1620.dto.StudentApplyInformation;
 import nchu.class1620.entity.Admin;
 import nchu.class1620.repository.AdminRepository;
+import nchu.class1620.repository.AssistantAllInformationRepository;
 import nchu.class1620.repository.AssistantRepository;
+import nchu.class1620.repository.OwnAssistantRepository;
 import nchu.class1620.repository.StudentApplyInformationRepository;
 
 /*
@@ -24,6 +27,10 @@ public class AdminService implements AdminServiceInterface{
 	private StudentApplyInformationRepository sair;
 	@Autowired
 	private AssistantRepository asr;
+	@Autowired
+	private OwnAssistantRepository oar;
+	@Autowired
+	private AssistantAllInformationRepository aar;
 	
 	
 	@Override
@@ -42,12 +49,26 @@ public class AdminService implements AdminServiceInterface{
 	}
 
 	@Override
-	public void UpdateStudentApplyInformation(String Comment) {
-//		int id = asr.findMaxId() + 1;
-//		
-//		asr.		//插入助教数据库
-//		asr.		//插1入从属数据库
-//		asr.  		//更新录取状态
+	public void FailedUpdateStudentApplyInformation(int id , String Comment) {									//拒绝申请助教信息
+		sair.FailedUpdateComment(id, Comment);																	
 	}
+
+	@Override
+	public void SuccessUpdateStudentApplyInformation(StudentApplyInformation studentApplyInformation) {			//接受申请助教信息
+		sair.SuccessUpdateComment(studentApplyInformation.getS_id(),studentApplyInformation.getComment());		//更新填写报名表
+		int id = asr.findMaxId()+1;
+		studentApplyInformation.setAssist_id(id);																//更新报名表信息
+		
+		String name =  studentApplyInformation.getS_name();			
+		asr.InsertAssistant(id, name, 123);																	 	//插入一条新的助教记录
+		asr.InsertStudentAndAssistant(id,studentApplyInformation.getS_id());									//插入一条学生助教数据
+		oar.InsertOwnAssistant(studentApplyInformation.getT_id(), id , studentApplyInformation.getC_id());		//插入助教从属表
+	}
+	
+	@Override
+	public List<AssistantAllInformation> FindAllAssistantInformation() {
+		return aar.findAllAssistantInformation();
+	}
+	
 
 }

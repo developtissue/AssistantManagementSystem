@@ -12,6 +12,8 @@ public class StudentApplyInformation {
 	private String c_name;
 	private String status;
 	private String comment;
+	private int assist_id;
+	
 	
 	public int getS_id() {
 		return s_id;
@@ -72,6 +74,12 @@ public class StudentApplyInformation {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public int getAssist_id() {
+		return assist_id;
+	}
+	public void setAssist_id(int assist_id) {
+		this.assist_id = assist_id;
 	}
 	
 	

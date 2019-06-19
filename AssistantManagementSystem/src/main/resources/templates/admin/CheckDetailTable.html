@@ -134,8 +134,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+                    <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">学号 <span class="required">*</span>
                         </label>
@@ -167,23 +166,25 @@
                       </div>
                       
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">添加评语 <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">评语<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" th:value="${studentApplyInformation.comment}">
+                          <input id="comment" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" th:value="${studentApplyInformation.comment}">
                         </div>
                       </div>
                       
                       <div class="ln_solid"></div>
                       
+                      <input id="status" class="date-picker form-control col-md-7 col-xs-12" required="required" type="hidden" th:value="${studentApplyInformation.status}">
+                      
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button">拒绝申请</button>
-                          <button type="submit" class="btn btn-success">接受申请</button>
+                          <button class="btn btn-primary" type="button" id = "refuse">拒绝申请</button>
+                          <button class="btn btn-success" type="button" id = "accepts">接受申请</button>
                         </div>
                       </div>
                     
-                    </form>
+                    </div>
                   
                   </div>
                 </div>
@@ -248,5 +249,6 @@
     <!-- Custom Theme Scripts -->
     <script src="/reference/build/js/custom.min.js"></script>
 	
+	<script src="/Js/CheckDetailTable.js"></script>
   </body>
 </html>

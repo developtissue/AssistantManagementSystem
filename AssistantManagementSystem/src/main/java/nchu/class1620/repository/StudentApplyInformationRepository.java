@@ -48,9 +48,18 @@ public interface StudentApplyInformationRepository {
 			"where af.application_id = waf.application_id and \r\n" + 
 			"	   waf.application_id = pa.application_id and \r\n" + 
 			"      s.s_id = waf.s_id and t.t_id = pa.t_id and\r\n" + 
-			"	   c.c_id = pa.c_id  and s.s_id=16202103")
+			"	   c.c_id = pa.c_id  and s.s_id=#{id}")
 	@Value("studentapplyinformationMap")
 	public StudentApplyInformation findStudentApplyInforByStuid(@Param("id") int id);
 	
 	
+	@Select("update writeapplicationform\r\n" + 
+			"set comment = #{comment}\r\n" + 
+			"where s_id = #{id};")
+	public void FailedUpdateComment(@Param("id") int id,@Param("comment") String comment);
+	
+	@Select("update writeapplicationform\r\n" + 
+			"set comment = #{comment} , status = '¼ȡ' \r\n" + 
+			"where s_id = #{id};")
+	public void SuccessUpdateComment(@Param("id") int id,@Param("comment") String comment);
 }

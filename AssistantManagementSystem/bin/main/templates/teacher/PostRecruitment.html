@@ -139,44 +139,47 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">工号 <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" th:value="${teacher.id}" disabled>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">姓名 <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12" th:value="${teacher.name}" disabled>
                         </div>
                       </div>
       
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">课程名称</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                          <input id="course" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" th:if="${session.flag!=null&&!session.flag&&session.first!=null&&session.first==1}">
+                          	<p style="color:red">课程名不存在</p>
+                          </label>
                         </div>
                       </div>
+                      
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">要求</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                          <input id="require" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                         </div>
                       </div>
 
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button">返回</button>
-                          <button type="submit" class="btn btn-success">提交申请</button>
+                          <button class="btn btn-success" id="submits">提交申请</button>
                         </div>
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -242,6 +245,7 @@
     <!-- Custom Theme Scripts -->
     <script src="/reference/build/js/custom.min.js"></script>
 	
+	<script src="/Js/PostRecruitment.js"></script>
   </body>
 </html>
 

@@ -26,5 +26,4 @@ public interface AdminRepository {
 	public Admin findAdminById(@Param("id") int id , @Param("password") int password);
 	
 	
-	
 }

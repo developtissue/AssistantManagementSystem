@@ -7,4 +7,5 @@ public interface TeacherServiceInterface {
 	
 	public Teacher TeacherLogin(int teacher_id, int teacher_password);
 	
+	public Boolean InsertPublishRecruitment(Teacher teacher, String name ,String require);
 }

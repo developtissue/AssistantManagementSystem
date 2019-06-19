@@ -11,7 +11,9 @@ import nchu.class1620.AssitantManagementSystemApplication;
 import nchu.class1620.entity.AttendExperiment;
 import nchu.class1620.dto.MyEntity1;
 import nchu.class1620.repository.AttendExperimentRepository;
+import nchu.class1620.repository.TeacherRepository;
 import nchu.class1620.service.MyService1;
+import nchu.class1620.service.TeacherService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -19,10 +21,16 @@ import nchu.class1620.service.MyService1;
 public class AssitantManagementSystemApplicationTests {
 
 	@Autowired
-	AttendExperimentRepository repo;
+	TeacherService teacherService;
 	
 	@Autowired
-	MyService1 service;
+	TeacherRepository repo;
+	
+	@Test
+	public void test() {
+		Integer result = repo.FindCourseId("1sfd");
+		System.out.println(result);
+	}
 	
 //	@Test
 //	public void test() {

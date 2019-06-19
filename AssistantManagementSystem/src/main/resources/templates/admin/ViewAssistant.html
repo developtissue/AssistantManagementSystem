@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -95,7 +95,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>审核 <small>对以下助教进行审核</small></h3>
+                <h3>查看 <small>查看下面的所有助教</small></h3>
               </div>
 
               <div class="title_right">
@@ -138,145 +138,22 @@
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-                            <th>
-                              <input type="checkbox" id="check-all" class="flat">
-                            </th>
-                            <th class="column-title">学号 </th>
+                            <th class="column-title">助教编号 </th>
                             <th class="column-title">应聘时间 </th>
                             <th class="column-title">助教老师</th>
                             <th class="column-title">学生姓名 </th>
-                            <th class="column-title">助教课程 </th>
-                            <th class="column-title no-link last"><span class="nobr">Action</span>
-                            </th>
-                            <th class="bulk-actions" colspan="7">
-                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                            </th>
                           </tr>
                         </thead>
 
                         <tbody>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小米</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小好</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小德</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小派</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小派</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 </td>
-                            <td class=" ">小风</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小于</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小于</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">小若</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">11111111</td>
-                            <td class=" ">2019-5-30 </td>
-                            <td class=" ">张恒峰</td>
-                            <td class=" ">小美</td>
-                            <td class=" ">web高级编程</td>
-                            <td class=" last"><a href="ModifyAssistantInformation">查看</a>
-                            </td>
-                          </tr>
+                          <tr class="even pointer" th:each = "s : ${list}">
+                            <td class=" " th:text="${s.assist_id}"></td>
+                            <td class=" " th:text="${s.c_name}"></td>
+                            <td class=" " th:text="${s.assist_name}"></td>
+                            <td class=" " th:text="${s.t_name}"></td>
+                          </tr>  
                         </tbody>
+                        
                       </table>
                     </div>		
                   </div>
@@ -305,7 +182,7 @@
         </footer>
         <!-- /footer content -->
       </div>
-    </div>
+    
 
     <!-- jQuery -->
     <script src="/reference/vendors/jquery/dist/jquery.min.js"></script>

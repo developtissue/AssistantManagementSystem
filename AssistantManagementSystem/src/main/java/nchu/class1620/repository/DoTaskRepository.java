@@ -16,7 +16,6 @@ import nchu.class1620.entity.DoTask;
 @Mapper
 public interface DoTaskRepository {
 
-
 	@Select("SELECT * from dotask where s_id=#{sid}")
 	public List<DoTask> findByDoTaskId(Integer sid);
 	

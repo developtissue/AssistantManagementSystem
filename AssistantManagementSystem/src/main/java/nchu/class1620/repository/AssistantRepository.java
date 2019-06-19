@@ -24,7 +24,7 @@ public interface AssistantRepository {
 	
 	@Select("SELECT assistant.assist_id,assistant.assist_name,ownassistant.assist_grade,ownassistant.comment \r\n" 
 			+ "from assistant,ownassistant\r\n" 
-			+ "where assistant.assist_id=ownassistant.assist_id; ")
+			+ "where assistant.assist_id=ownassistant.assist_id")
 	public List<OwnAssistant> findAll();
 
 	@Results(id="assistantMap", value={ 
@@ -39,7 +39,11 @@ public interface AssistantRepository {
 	public int findMaxId();
 		
 	@Select("insert into assistant(assist_id , assist_name , assist_password) values(#{assist_id},#{name},#{password})")
-	public Assistant InsertAssistant(@Param("assist_id") int assist_id, @Param("name") int name , @Param("password") int password);
+	public void InsertAssistant(@Param("assist_id") int assist_id, @Param("name") String name , @Param("password") int password);
+	
+	@Select("insert into studentandassistant(assist_id , s_id) values(#{assist_id},#{id})")
+	public void InsertStudentAndAssistant(@Param("assist_id") int assist_id, @Param("id") int id );
+	
 	
 }
 

@@ -1,7 +1,18 @@
 $(document).ready(function() {	
-	$('#btn').click(function(){
-		var urls = "http://localhost:8080/CheckDetailTable/" + $(this).data('id');		
-		window.location.href = urls;
+	
+	$('#refuse').click(function(){
+		var temp = $('#comment').val();
+		var temp1 = $('#first-name').val();
+		var urls = "http://localhost:8080/ModifyComment/"+"2/"+ temp1 +"/"+temp;			
 		
-	});  
+		$.ajax({
+			url: urls,
+	       	type: 'POST'
+	    }).then(function(data) {
+	    	alert("修改成功！");
+	    	window.location.href = "http://localhost:8080/CheckApplyTable";
+	    });
+		
+	}); 
+	
 });
