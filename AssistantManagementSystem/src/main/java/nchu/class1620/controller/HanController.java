@@ -50,8 +50,12 @@ public class HanController {
 	}
 
 	@GetMapping("/DisplayAssistantGrade")
-	public String DisplayAssistant(Model model) {
-		List<MyEntity4> oa = OwnAssistRepo.findAll();
+	public String DisplayAssistant(Model model, HttpSession session) {
+		Teacher t = (Teacher) session.getAttribute("teacher");
+		int t_id = t.getId();
+		System.out.println(t_id);
+		System.out.println("1111111111111111111");
+		List<MyEntity4> oa = OwnAssistRepo.findByTid(t_id);
 		model.addAttribute("oa", oa);
 		return "teacher/DisplayAssistantGrade";
 	}
@@ -72,7 +76,7 @@ public class HanController {
 		System.out.println(comment);
 		OwnAssistRepo.UpdateGradeAndMessage(t_id,Assistid,c_id,AssistGrade,comment);
 		/* model.addAttribute("oa", oa); */
-		List<MyEntity4> oa = OwnAssistRepo.findAll();
+		List<MyEntity4> oa = OwnAssistRepo.findByTid(t_id);
 		model.addAttribute("oa", oa);
 		return "teacher/DisplayAssistantGrade"; 
 	}
