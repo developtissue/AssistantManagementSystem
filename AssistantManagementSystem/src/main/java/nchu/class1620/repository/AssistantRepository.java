@@ -8,7 +8,6 @@ import nchu.class1620.entity.OwnAssistant;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.type.JdbcType;
 
 import nchu.class1620.entity.Assistant;
@@ -26,6 +25,7 @@ public interface AssistantRepository {
 			+ "from assistant,ownassistant\r\n" 
 			+ "where assistant.assist_id=ownassistant.assist_id")
 	public List<OwnAssistant> findAll();
+
 
 	@Results(id="assistantMap", value={ 
 	@Result(property = "assist_id", column = "assist_id" , jdbcType=JdbcType.INTEGER), 
