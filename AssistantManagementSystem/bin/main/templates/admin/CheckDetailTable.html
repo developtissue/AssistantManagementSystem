@@ -66,8 +66,8 @@
 								<li><a><i class="fa fa-desktop"></i> 管理员界面 <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="CheckApplyTable">查看应聘表</a></li>
-										<li><a href="ViewAssistant">查看助教信息</a></li>
+										<li><a th:href="@{/CheckApplyTable}">查看应聘表</a></li>
+										<li><a th:href="@{/ViewAssistant}">查看助教信息</a></li>
 									</ul></li>
 							</ul>
 						</div>
@@ -197,7 +197,7 @@
 		<!-- /menu footer buttons -->
 		<div class="sidebar-footer hidden-small">
 			<a data-toggle="tooltip" data-placement="top" title="Logout"
-						href="Logout"> <span class="glyphicon glyphicon-off"
+						th:href="@{/Logout}"> <span class="glyphicon glyphicon-off"
 						aria-hidden="true"></span>
 			</a>
 		</div>
