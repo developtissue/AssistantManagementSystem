@@ -26,7 +26,7 @@ public interface StudentLoginRepository {
 	})
 			
 	@Select("SELECT * from student where s_id=#{id} and s_password=#{password}")
-	public Student findStudentById(@Param("id") int id , @Param("password") int password);
+	public Student findStudentById(@Param("id") String id , @Param("password") String password);
 	
 	
 	

@@ -209,7 +209,7 @@ public class HomeController {
 	
 	@ResponseBody
 	@GetMapping("/test3/{id}")
-	public Map<String, Object> test3(@PathVariable ("id") int id) {
+	public Map<String, Object> test3(Model model,@PathVariable ("id") int id) {
 		Map<String, Object> map = new HashMap<>();
 		
 		List<MyEntity1> result = ms1.getMyEntity1List(id);
@@ -232,6 +232,9 @@ public class HomeController {
 		System.out.println("string_id.substring(0, 5): " + s_id);
 		
 		List<MyEntity3> me = ms3.getMyEntity3List(s_id);
+		model.addAttribute("me", me);
+		
+		
 		System.out.println(me.size());
 		int[] counts = new int[2];
 		double avg = 0;

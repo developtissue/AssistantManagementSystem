@@ -23,7 +23,7 @@ public class AssistantService implements AssistantServiceInterface{
 	private AssistantRepository loginRepository;
 	
 	@Override
-	public Assistant AssistantLogin(int assist_id, int assist_password) {
+	public Assistant AssistantLogin(String assist_id, String assist_password) {
 		return loginRepository.findAssistantById(assist_id, assist_password);
 	}
 

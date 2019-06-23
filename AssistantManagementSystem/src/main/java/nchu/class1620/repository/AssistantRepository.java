@@ -33,7 +33,7 @@ public interface AssistantRepository {
 	@Result(property = "password", column = "assist_password" )
 	})
 	@Select("SELECT * from assistant where assist_id=#{assist_id} and assist_password=#{password}")
-	public Assistant findAssistantById(@Param("assist_id") int assist_id , @Param("password") int password);
+	public Assistant findAssistantById(@Param("assist_id") String assist_id , @Param("password") String password);
 	
 	@Select("SELECT max(assist_id) from assistant ")
 	public int findMaxId();

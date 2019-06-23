@@ -20,7 +20,7 @@ public interface TeacherRepository {
 			@Result(property = "name", column = "t_name"), @Result(property = "password", column = "t_password") })
 
 	@Select("SELECT * from teacher where t_id=#{id} and t_password=#{password}")
-	public Teacher findTeacherById(@Param("id") int id, @Param("password") int password);
+	public Teacher findTeacherById(@Param("id") String id, @Param("password") String password);
 
 	@Select("select teacher.t_id,teacher.t_name from teacher limit 1")
 	public Teacher findTeacher();

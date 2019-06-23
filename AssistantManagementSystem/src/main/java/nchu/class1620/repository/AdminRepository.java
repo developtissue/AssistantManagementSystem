@@ -23,7 +23,7 @@ public interface AdminRepository {
 	})
 					
 	@Select("SELECT * from administrator where admin_id=#{id} and admin_password=#{password}")
-	public Admin findAdminById(@Param("id") int id , @Param("password") int password);
+	public Admin findAdminById(@Param("id") String id , @Param("password") String password);
 	
 	
 }

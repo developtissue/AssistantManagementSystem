@@ -20,7 +20,7 @@ public class StudentService implements StudentServiceInterface{
 	private StudentLoginRepository slr; 
 	
 	@Override
-	public Student StudentLogin(int s_id, int s_password) {
+	public Student StudentLogin(String s_id, String s_password) {
 		return slr.findStudentById(s_id, s_password);
 	}
 	

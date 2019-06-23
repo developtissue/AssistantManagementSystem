@@ -10,6 +10,6 @@ import nchu.class1620.entity.*;
 
 public interface AssistantServiceInterface {
 		
-	public Assistant AssistantLogin(int assist_id ,int assist_password);
+	public Assistant AssistantLogin(String assist_id ,String assist_password);
 	
 }

@@ -18,7 +18,7 @@ public class TeacherService implements TeacherServiceInterface{
 	private TeacherRepository teacherRepository;
 	
 	@Override
-	public Teacher TeacherLogin(int teacher_id, int teacher_password) {
+	public Teacher TeacherLogin(String teacher_id, String teacher_password) {
 		return teacherRepository.findTeacherById(teacher_id, teacher_password);
 	}
 

@@ -14,7 +14,7 @@ import nchu.class1620.entity.Assistant;
 public interface AdminServiceInterface {
 
 	
-	public Admin AdminLogin(int admin_id, int admin_password);
+	public Admin AdminLogin(String admin_id, String admin_password);
 	
 	public List<StudentApplyInformation> findAllStudentApplyIn();
 	

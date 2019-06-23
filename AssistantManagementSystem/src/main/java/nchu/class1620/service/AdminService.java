@@ -34,7 +34,7 @@ public class AdminService implements AdminServiceInterface{
 	
 	
 	@Override
-	public Admin AdminLogin(int admin_id, int admin_password) {	
+	public Admin AdminLogin(String admin_id, String admin_password) {	
 		return ar.findAdminById(admin_id, admin_password);
 	}
 

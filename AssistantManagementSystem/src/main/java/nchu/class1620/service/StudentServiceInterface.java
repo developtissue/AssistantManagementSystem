@@ -10,6 +10,6 @@ import nchu.class1620.entity.*;
 
 public interface StudentServiceInterface {
 
-	public Student StudentLogin(int s_id ,int s_password);
+	public Student StudentLogin(String s_id ,String s_password);
 	
 }

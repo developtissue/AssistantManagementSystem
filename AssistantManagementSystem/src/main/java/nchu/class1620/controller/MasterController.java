@@ -1,6 +1,5 @@
 package nchu.class1620.controller;
 
-import java.nio.channels.SeekableByteChannel;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -37,39 +36,36 @@ public class MasterController {
 	}
 
 	@PostMapping("main")
-	public String home(String id, String password, String value, Model model, HttpSession session) { // µÇÂ¼¿ØÖÆÆ÷
-		int ids = Integer.parseInt(id);
-		int passwords = Integer.parseInt(password);
-		int type = Integer.parseInt(value);
-
-		if (type == 1) {
-			if (studentService.StudentLogin(ids, passwords) != null) {
+	public String home(String id, String password, int value, Model model, HttpSession session) { // µÇÂ¼¿ØÖÆÆ÷
+		
+		if (value == 1) {
+			if (studentService.StudentLogin(id, password) != null) {
 				System.out.println("Hello,Student");
-				session.setAttribute("student", studentService.StudentLogin(ids, passwords));
+				session.setAttribute("student", studentService.StudentLogin(id, password));
 				return "MainInterface";
 			} else {
 				return "login";
 			}
-		} else if (type == 2) {
-			if (adminService.AdminLogin(ids, passwords) != null) {
+		} else if (value == 2) {
+			if (adminService.AdminLogin(id, password) != null) {
 				System.out.println("Hello,Admin");
-				session.setAttribute("admin", adminService.AdminLogin(ids, passwords));
+				session.setAttribute("admin", adminService.AdminLogin(id, password));
 				return "MainInterface";
 			} else {
 				return "login";
 			}
-		} else if (type == 4) {
-			if (teacherService.TeacherLogin(ids, passwords) != null) {
+		} else if (value == 4) {
+			if (teacherService.TeacherLogin(id, password) != null) {
 				System.out.println("Hello,Teacher");
-				session.setAttribute("teacher", teacherService.TeacherLogin(ids, passwords));
+				session.setAttribute("teacher", teacherService.TeacherLogin(id, password));
 				return "MainInterface";
 			} else {
 				return "login";
 			}
 		} else {
-			if (assistantService.AssistantLogin(ids, passwords) != null) {
+			if (assistantService.AssistantLogin(id, password) != null) {
 				System.out.println("Hello,Assistant");
-				session.setAttribute("assistant", assistantService.AssistantLogin(ids, passwords));
+				session.setAttribute("assistant", assistantService.AssistantLogin(id, password));
 				return "MainInterface";
 			} else {
 				return "login";
