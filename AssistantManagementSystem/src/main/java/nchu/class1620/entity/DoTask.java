@@ -1,5 +1,11 @@
 package nchu.class1620.entity;
 
+/*
+* 16202125-吴俊雄
+*  查询学生作业成绩
+*  学生作业实体来
+*/
+
 public class DoTask {
 
 	private int s_id;
