@@ -1,5 +1,11 @@
 package nchu.class1620.entity;
 
+/*
+* 16202125-吴俊雄
+*
+*  实验实体来
+*/
+
 public class Experiment {
 
 	private int e_id;
