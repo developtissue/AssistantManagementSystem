@@ -1,5 +1,11 @@
 package nchu.class1620.entity;
 
+/*
+* 16202125-吴俊雄
+*
+*  学生实体来
+*/
+
 public class Student {
 
 	private int s_id;
