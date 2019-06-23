@@ -1,5 +1,11 @@
 package nchu.class1620.entity;
 
+/*
+* 16202125-吴俊雄
+*
+*  作业实体来
+*/
+
 public class Task {
 
 	private int t_id;
