@@ -1,9 +1,8 @@
 package nchu.class1620.entity;
 
 /*
-* 16202125-å´ä¿Šé›„
-*
-*  å­¦ç”Ÿå®ä½“æ¥
+* 16202125-Îâ¿¡ĞÛ
+* StudentÀà ¿ÉÒÔ»ñÈ¡µÄÑ§ÉúµÄÏàÓ¦µÄĞÅÏ¢
 */
 
 public class Student {
