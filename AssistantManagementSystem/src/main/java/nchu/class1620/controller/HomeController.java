@@ -164,6 +164,14 @@ public class HomeController {
 		return "teacher/AnalyzeGrade";
 	}
 	
+	/*
+	 * 通过爱在网页上的JQuery 以及 ajax 的联动效果
+	 * 实现了由前台获取学号或者班级号的数据信息
+	 * 并对数据信息进行了哈法性的验证
+	 * 然后船只controller中流通股service层
+	 * 然后对数据库的访问并返回一个map对象到前台页面
+	 * 最后在在页面上会将数据分析的结果加入至图表中展示
+	 */
 	@ResponseBody
 	@GetMapping("/test/{id}")
 	public Map<String, Object> test(@PathVariable ("id") int id) {
