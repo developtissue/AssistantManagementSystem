@@ -35,6 +35,12 @@ public class HomeController {
 	@Autowired
 	private MyService4 ms4;
 	
+	
+	/*
+	 * 用于前期开发测试
+	 * （1）登录界面的测试
+	 * （2）主页面跳转 的测试
+	 */
 //	@GetMapping("/")
 //	public String index(Model model) {
 //		return "login";
