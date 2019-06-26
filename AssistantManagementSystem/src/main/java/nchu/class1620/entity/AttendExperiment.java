@@ -3,7 +3,7 @@ package nchu.class1620.entity;
 /*
 * 16202125-吴俊雄
 * AttendExperiment类 为学生出席的实验课的实体类
-* 通过该实体类，我们主要可以获取到学生实验成绩信息
+* 通过该实体类，我们主要可以获取到学生的实验成绩的信息
 */
 
 public class AttendExperiment {
