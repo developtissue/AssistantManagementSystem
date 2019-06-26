@@ -51,6 +51,13 @@ public class HomeController {
 //		return "MainInterface";
 //	}
 	
+	
+    /*
+     * 在页面上展示
+     * 学生 实验 / 作业 成绩信息的报表 Controller
+     * 在方法中应用了 "正则表达式" 
+     * 对用户输入的数据，进行非法数据的验证
+     */
 	@GetMapping("/table")
 	public String displayGradeTable(Model model,String clsid,String clsid2,
 			String sid,String sid2,String clsid3,String clsid4) {
