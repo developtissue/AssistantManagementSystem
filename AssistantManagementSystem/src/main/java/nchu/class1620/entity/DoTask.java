@@ -1,9 +1,9 @@
 package nchu.class1620.entity;
 
 /*
-* 16202125-å´ä¿Šé›„
-*  æŸ¥è¯¢å­¦ç”Ÿä½œä¸šæˆç»©
-*  å­¦ç”Ÿä½œä¸šå®žä½“æ¥
+* 16202125-Îâ¿¡ÐÛ
+* DOTaskÀà ÎªÑ§ÉúËù×öµÄ×÷ÒµµÄÊµÌåÀà
+* Í¨¹ý¸ÃÊµÌåÀà£¬ÎÒÃÇÖ÷Òª¿ÉÒÔ»ñÈ¡µ½Ñ§ÉúµÄ×÷Òµ³É¼¨µÄÐÅÏ¢
 */
 
 public class DoTask {
