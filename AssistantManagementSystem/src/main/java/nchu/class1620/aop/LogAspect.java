@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 /*
  * author: 16202125-吴俊雄
  * LogAspect aop日志测试打印类
+ * 对执行的数据库的仓储层中的数据查询
+ * 进行面向切面的AOP的切面编程
  */
 
 @Component
