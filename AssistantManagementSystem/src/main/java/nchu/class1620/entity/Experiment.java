@@ -1,9 +1,8 @@
 package nchu.class1620.entity;
 
 /*
-* 16202125-å´ä¿Šé›„
-*
-*  å®éªŒå®ä½“æ¥
+* 16202125-Îâ¿¡ĞÛ
+* ExperimentÀà ¿ÉÒÔ»ñÈ¡µ½ÏàÓ¦µÄÊµÑéĞÅÏ¢
 */
 
 public class Experiment {
