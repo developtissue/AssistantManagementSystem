@@ -154,6 +154,11 @@ public class HomeController {
 		return "teacher/DisplayTable";
 	}
 	
+	/*
+	 * 对学生成绩进行数据分析
+	 * 通过以下图表进行展示分析结果
+	 * 折线图，柱状图，饼状图，比例图
+	 */
 	@GetMapping("/chart")
 	public String analysisGradeChart(Model model) {
 		return "teacher/AnalyzeGrade";
